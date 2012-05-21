@@ -1,0 +1,24 @@
+*.*~
+
+*.orig
+*.pdf
+
+# estensioni generali latex
+*.aux
+*.out
+*.log
+*.toc
+*.synctex.gz
+*.synctext.gz
+*.dvi
+*.lot
+*.lof
+# ------------------------------
+
+# estensioni del glossario latex
+*.gl
+*.glg
+*.glo
+*.gls
+*.xdy
+# -----------------------------
