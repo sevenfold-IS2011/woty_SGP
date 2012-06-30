@@ -1,0 +1,46 @@
+Lory-Guerra: Abbiamo parlato con il prof oggi 21 maggio e ha detto che...
+
+
+Il progetto potrebbe essere incentrato su una delle due seguenti tematiche principali:
+
+1) potrebbe aver senso aprire un'azienda unicamente incentrata sul sw woty, ( per la sua creazione/sviluppo ), la sua commercializzazione, manutenzione,vendita ecc.?
+
+2) a partire da una azienda informatica, potrebbe aver senso ( creare/sviluppare ), commercializzare il sw woty ed immetterlo nel mercato?
+
+
+
+--------------
+Lory:
+in sostanza a grandi linee x capire, si trattare di fare una specie di enorme e generico """studio di fattibilità""" sul sw woty
+cioè capire se avrebbe senso svilupparlo ( impegnando una montagna di soldi), come svilupparlo, in che settori aziendali incentrarlo, e capire se dopo lo sviluppo il sw potrebbe avrebbe un riscontro nel mercato per poterlo vendere ( e recuperare la montagna di soldi spesa ahahaha !! sennò puoi usare gli stagisti come negri e non spendere soldi! )
+--------------
+
+ 
+per entrambi le tematiche, al suo interno possiamo x esempio (su suggerimento del prof) trattare i seguenti punti:
+ 
+
+
+studiare la licenza da dare a woty:
+- scanza annuale rinnovabile
+- pagamento solo all'inizio e basta (sconsigliato)
+- ecc
+
+
++  
+
+come pensare di commercializzare il sw:
+- affiancarsi ad enti esterni come didanet ( società che pubblicizza prodotti nel mercato su commessa) per comercializzare il software (valutare se avrebbe senso ), 
+- oppure ragionare se avrebbe senso formare degli agenti di commercio interni per vendere direttamente il prodotto.
+- oppure ancora appoggiarsi ad un consulente .. ( x aiuto commercio, che porta clienti..)
+
+
++
+
+ragionare se avrebbe senso, se fosse fattibile, e quali vantaggi potrebbe portare appoggiarsi al ministero del lavoro per poter CERTIFICARE il software magari ank a livello nazionale statale ( "seeee....." ).
+
++
+
+negli studi di fattibilità sulla commercializzazione del software, fare molto riferimento al sito ISTAT e ( un'altro sito simile k non ci ha citato xk si aspetta dovremo trovare noi ) per analizzare le statistiche sugli incidenti sul lavoro e l'importanza della sicurezza.
+Inoltre dai dati si può analizzare in quali settori lavorativi si hanno maggiori incidenti sul lavoro, e x i quali woty potrebbe essere maggiornamente utile/applicabile e quindi + facilmente commercializzabile.
+
+
