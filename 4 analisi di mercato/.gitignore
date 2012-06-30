@@ -2,7 +2,7 @@
 
 *.orig
 
-# *.pdf
+*.pdf
 
 # estensioni generali latex
 *.aux
