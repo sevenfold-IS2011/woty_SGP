@@ -9,6 +9,22 @@ non usate le slides k trovate lincate dal sito di ghirald k trovate a questo lin
 http://www.cissm.unipd.it/dispense/ghiraldo/
 
 
+PORCO DIO LORY NO SCRIVERE COME NA QUINDICENNE DIO LURIDO TE GHE NA TASTIERA GRANDA E NESUN LIMITE A 160 CARATTERI
+
+
+SPIEGAME CHE CASSO CHE VOL DIRE LA FRASE: "non usate le slides k trovate lincate dal sito di ghirald k trovate a questo link xk sono quelle vecchie!!"
+
+
+MA SOPRATTUTTO L'UNICA PAROLA CHE LA GAVARIA VOSUDO LA K ("LINKATE") TE LA GHE SCRITA CO LA C
+
+
+VERGOGNATE
+
+
+VERGOGNATE
+
+
+VERGOGNATE
 
 da oggi disponibile il nuovo comando latex per fare le virgolette in maniera decente una volta per tutte!!!!!!!!!!!!
 
