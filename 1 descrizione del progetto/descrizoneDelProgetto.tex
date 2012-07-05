@@ -204,8 +204,7 @@
 \begin{center}
 
 \textbf{{\huge{Sommario}}}
-
-Questo documento contiene la struttura del sistema Woty, analizzando nel dettaglio i suoi componenti.
+------------------------EMPTY-------------------------
 
 \vspace*{0.2cm} % il vertical space va preceduto da una riga vuota!!!
 
@@ -235,31 +234,142 @@ Questo documento contiene la struttura del sistema Woty, analizzando nel dettagl
 
 % --------------------------------------------------------------------
 
-% INTRODUZIONE ( 1° CAPITOLO ) QUESTO CAPITOLO VA MESSO IN OGNI DOCUMENTO!!!!!!!!
+% LORY LA MIA PARTE INIZIA DA QUA E PRIMA DI QUA CI DEVI METTERE IL SOMMARIO E LE ALTRE STRONZATE
 
 \newpage
 \section{Introduzione}
 
 
 \subsection{Scopo del documento}
-Con il presente documento su vuole dare una definizione dettagliata dell'architettura del sistema Woty attraverso un approccio top-down. Di ogni sottosistema infatti verrà presentata dapprima la struttura dei componenti, poi verranno specificate le classi, ed infine di ogni classe si indicheranno metodi e campi dati.
+Il presente documento rappresenta un Business Plan per il sistema denominato \textbf{Woty},  sviluppato dal teamwork Sevenfold in corrispondenza del corso di Ingegneria del Software [2012].\\
 
 
 
 
 
-\comment{
-CODICE X INCLUDERE UNA IMMAGINE
-(ricordati di mettere l'immagine nella cartella images!!)
+\section{Descrizione del Sistema}
+
+Descriveremo ora le funzionalità pratiche del sistema, dagli attori coinvolti ai vari ambiti di utilizzo, al fine di rendere chiaro a un soggetto esterno l'effettiva utilità del prodotto.
+
+\subsection{Cos'è Woty}
+
+Il sistema software Woty si pone come obiettivo la realizzazione di una piattaforma innovativa per l’apprendimento comportamentale nell’ambito della sicurezza del lavoro, che utilizzi le tecniche della gamification per incentivare il coinvolgimento e la partecipazione degli utenti e per scardinare l’instaurarsi di abitudini errate.\\
+Woty è orientato alla ”quest ”, che consiste in un compito/sfida che l’utente dovrà compiere.\\
+Questo permetterà al sistema di assegnare un punteggio, che concorrerà alla creazione di classifiche personali o di gruppo.\\
+Woty vuole poter essere utilizzato sia in ambito aziendale su postazioni fisse (indipendentemente dall’OS utilizzato), sia in ambito mobile, attraverso l’utilizzo di smartphone.\\
+
+\subsection{Collocazione del prodotto}
+
+Il sistema software Woty può essere adottato da qualsiasi realtà lavorativa dove l’uso del computer rientra nella normale routine dei dipendenti. \\
+I clienti che decidono di usare Woty offrono ai loro impiegati la possibilità di sostituire un eventuale corso frontale sulla sicurezza con l’utilizzo del nostro sistema.\\
+In ambito aziendale la formazione del personale riguardo conoscenze critiche, come può essere ad esempio la gestione delle norme sulla sicurezza sul lavoro, è normalmente erogata secondo procedure statiche scollegate dall’ambiente lavorativo come l’insegnamento in aula, che poco motivano e stimolano all’apprendimento i partecipanti.\\
+Un apprendimento diverso, di forma continua e interattiva, può essere erogato ai lavoratori come parte integrante delle attività lavorative standard, per fare in modo che il coinvolgimento dell’utente sia elevato, grazie a compiti e sfide a cui verrà sottoposto.\\
+Un aumento dell’interesse e della partecipazione del lavoratore può essere creato attraverso elementi di gamification ,con i quali verrà innestata una forma di competizione tra le diverse squadre di lavoro, oltre che nel singolo.
+
+\subsection{Funzionalità del prodotto}
+
+Di seguito sono descritte in generale le funzionalità che il sistema fornisce ai suoi utenti.\\
+
+\subsubsection{Ambiente aziendale}
+Nell’ambiente aziendale, Woty permette agli User di portare a termine le quest direttamente all’interno di un browser. Un sistema di notifica nel terminale dello User lo informa della presenza di nuove quest disponibili. Il sistema di notifica gestirà anche l’autenticazione al sistema.\\ 
+È prevista in ogni azienda la presenza di un Super-userg per l’amministrazione delle utenze.\\
+
+
+\subsubsection{Ambiente mobile}
+Gli User in mobilità denominati Mobile-user , tramite l’applicazione dedicata, si autenticano, svolgono le quest loro assegnate e visualizzano statistiche e punteggi esattamente come farebbero con la normale interfaccia desktop.
+
+\subsection{Ambiente di esecuzione}
+
+Il software è sviluppato sul modello client-server. I client si dividono in desktop e mobile. La parte server è ospitata unicamente presso le macchine del fornitore.\\
+L’inserimento di un nuovo cliente comporta un intervento sull’interfaccia web da parte del Woty Administrator, che fissa inoltre il numero di account istanziabili dal nuovo cliente.\\
+Viene designato un Super-user presso il cliente che tramite un’interfaccia web avrà le responsabilità di:
+\begin{itemize}
+\item{ Assegnare i singoli account utente al personale. }
+\item{ Associare ad ogni account un workgroup che ne identifica il dipartimento (e.g. impiegato, operaio, etc.) scelta da un pool di workgroup assegnato all’azienda dal Woty Administrator. }
+\end{itemize}
+
+A questo punto la normale amministrazione del sistema è in mano al Super-user, che non dovrebbe avere bisogno del fornitore a meno di guasti.
+
+\subsubsection{Server}
+Il software va installato, inizializzato e testato presso i server scelti dal 	fornitore del servizio.\\
+L’uso è ridotto alla gestione amministrativa tramite interfaccia web, che deve poter essere portata a termine anche da personale qualificato ma non necessariamente tecnico.\\
+
+\newpage
+
+\subsection{Client Desktop}
+Dopo l’assegnazione di un account da parte del Super-user, il primo contatto dello User con il sistema è la visita alla homepage del software che aiuta, tramite un wizard , l’installazione del demone per la gestione dell’autenticazione e delle notifiche.\\
+Non dovrebbe essere necessario l’aiuto di personale specifico per i passi precedentemente descritti. Da questo punto per l’utente può cominciare la partecipazione attiva.\\
+
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{images/XXXX}
-\caption{Diagramma Gantt}
+\caption{Statistiche ufficiali Api}
+\includegraphics[scale=0.55]{images/statItaly} 
 \end{figure}
 
 
-}
+\begin{figure}[H]
+\centering
+\caption{Statistiche ufficiali Api}
+\includegraphics[scale=0.55]{images/internetStat} 
+\end{figure}
+
+
+\subsubsection{Client Mobile}
+Per ogni dispositivo è disponibile un client distribuito a seconda della piattaforma in uso.\\
+Dopo la canonica inizializzazione e assegnazione di un account da parte del Super-user, lo User può direttamente autenticarsi e cominciare a operare tramite l’interfaccia dell’applicazione.\\ 
+Un Mobile-user ha inoltre la facoltà di agire esattamente come un Desktop-user tramite l’interfaccia web.\\
+Dopo un'attenta valutazione e in base ai criteri di seguito esposti, abbiamo deciso di sviluppare l'applicazione solo su dispositivi Android, data la limitazione derivante dalle risorse concesse.\\
+Nulla vieta, in futuro, di poter sviluppare l'applicazione anche per diversi sistemi.\\
+
+\begin{figure}[H]
+\centering
+\caption{Statistiche d'uso dispositivi Android}
+\includegraphics[scale=0.65]{images/statAndroid} 
+\end{figure}
+
+Per quanto riguarda la scelta della versione da utilizzare abbiamo seguite le seguenti statistiche; gli aspetti tecnici tuttavia verranno trattati più dettagliatamente nei prossimi capitoli.\\
+
+\begin{figure}[H]
+\centering
+\caption{Statistiche ufficiali Api}
+\includegraphics[scale=0.55]{images/api} 
+\end{figure}
+
+\newpage
+
+\subsection{Caratteristiche degli utenti}
+Gli attori chiamati in causa si suddivideranno nelle seguenti categorie:
+
+\begin{enumerate}
+
+\item Woty Administrator\\
+L'attività assegnata al Woty Administrator è quella di illustrare il funzionamento del software presso il cliente ed eventualmente aiutare ad installare le applicazioni mobile.\\
+E' incaricato dell'inserimento delle quest. Conoscenze pratiche richieste: gestione di sistemi e reti informatiche.\\
+
+\item Desktop-user, a loro volta divisi in:
+
+\begin{enumerate}
+
+\item Desktop-user senza dispositivo mobile\\
+Questo tipo di attore dovrà svolgere le varie quest assegnategli da postazione fissa;
+
+\item Desktop-user con dispositivo mobile\\
+Questo tipo di attore dovrà svolgere le varie quest assegnategli, inoltre potrà averne a disposizione altre specifiche in cui si richiede l'uso di un dispositivo mobile (e.g. rilevamento di QR-Code).
+
+\end{enumerate}
+
+\item Mobile-user\\
+Questa tipologia di utenti potrà svolgere le proprie quest direttamente dal dispositivo mobile, quindi senza essere fisicamente nell'azienda.
+
+\paragraph{}
+Per entrambi gli attori Desktop-user e Mobile-user non sono richieste particolari conoscenze informatiche.
+
+\item Super-user\\
+Il Super-user sarà colui che all'interno dell'azienda dovrà occuparsi di visionare i risultati delle varie quest ed eventualmente illustrarne il funzionamento agli User. Si occupa inoltre dell'assegnazione di workgroup agli User del sistema.
+
+\end{enumerate}
+
 
 
 
