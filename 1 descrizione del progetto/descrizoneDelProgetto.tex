@@ -298,7 +298,8 @@ L’uso è ridotto alla gestione amministrativa tramite interfaccia web, che dev
 
 \subsection{Client Desktop}
 Dopo l’assegnazione di un account da parte del Super-user, il primo contatto dello User con il sistema è la visita alla homepage del software che aiuta, tramite un wizard , l’installazione del demone per la gestione dell’autenticazione e delle notifiche.\\
-Non dovrebbe essere necessario l’aiuto di personale specifico per i passi precedentemente descritti. Da questo punto per l’utente può cominciare la partecipazione attiva.\\
+Come riportiamo nei dati a seguire, vista la larga diffusione e uso della rete internet nel nostro paese, si presuppone che un utente medio sia in grado di svolgere senza difficoltà tutte le operazioni richieste, quindi non dovrebbe essere necessario l’aiuto di personale specifico per i passi precedentemente descritti.\\
+Da questo punto per l’utente può cominciare la partecipazione attiva.\\
 
 
 \begin{figure}[H]
@@ -307,6 +308,8 @@ Non dovrebbe essere necessario l’aiuto di personale specifico per i passi prec
 \includegraphics[scale=0.55]{images/statItaly} 
 \end{figure}
 
+Inoltre, l'interfaccia web sarà sviluppata tale da rimanere inalterata se visualizzata con diversi browser, anche con differenti versioni.\\
+Riportiamo di seguito le statistiche percentuali sull'utilizzo dei browser aggiornate a giugno 2012.
 
 \begin{figure}[H]
 \centering
@@ -320,12 +323,12 @@ Per ogni dispositivo è disponibile un client distribuito a seconda della piatta
 Dopo la canonica inizializzazione e assegnazione di un account da parte del Super-user, lo User può direttamente autenticarsi e cominciare a operare tramite l’interfaccia dell’applicazione.\\ 
 Un Mobile-user ha inoltre la facoltà di agire esattamente come un Desktop-user tramite l’interfaccia web.\\
 Dopo un'attenta valutazione e in base ai criteri di seguito esposti, abbiamo deciso di sviluppare l'applicazione solo su dispositivi Android, data la limitazione derivante dalle risorse concesse.\\
-Nulla vieta, in futuro, di poter sviluppare l'applicazione anche per diversi sistemi.\\
+Nulla vieta, in futuro, di poter sviluppare l'applicazione anche per diversi sistemi.
 
 \begin{figure}[H]
 \centering
 \caption{Statistiche d'uso dispositivi Android}
-\includegraphics[scale=0.65]{images/statAndroid} 
+\includegraphics[scale=0.50]{images/statAndroid} 
 \end{figure}
 
 Per quanto riguarda la scelta della versione da utilizzare abbiamo seguite le seguenti statistiche; gli aspetti tecnici tuttavia verranno trattati più dettagliatamente nei prossimi capitoli.\\
@@ -369,6 +372,36 @@ Per entrambi gli attori Desktop-user e Mobile-user non sono richieste particolar
 Il Super-user sarà colui che all'interno dell'azienda dovrà occuparsi di visionare i risultati delle varie quest ed eventualmente illustrarne il funzionamento agli User. Si occupa inoltre dell'assegnazione di workgroup agli User del sistema.
 
 \end{enumerate}
+
+\newpage
+
+\subsection{Descrizione quest}
+
+Le tipologie di quest che un User può sostenere sono varie, caratterizzate da un input che Woty darà all'utente e da una risposta che l'utente darà al sistema, in base alle richieste.\\
+SevenFold si riserva di ampliare e/o modificare le tipologie di quest offerte durante lo sviluppo di Woty, a seguito di decisioni prese in sinergia con la ditta proponente.\\
+
+\subsubsection{Caratterizzazione in base all'input Woty -> User}
+\begin{itemize}
+\item Testo: l'User visualizzerà un semplice testo.
+\item Foto: l'User visualizzerà a video un'immagine.
+\item Video: l'User visualizzerà un filmato.
+\end{itemize}
+
+\subsubsection{Caratterizzazione in base alla risposta dell'User}
+\begin{itemize}
+\item Risposta secca (si/no, vero/falso)
+\item Risposta chiusa tra un certo numero alternative
+\item Risposta multipla tra un certo numero di opzioni
+\item In caso di quest basata su testi, possibilità di riordinare testi disordinati
+\item In caso di quest basata su foto, possibilità di riordinare foto spezzettata e disordinata (puzzle)
+\item Scansione di un QR-Code$^g$ (Mobile-user)
+\end{itemize}
+
+\subsubsection{Caratterizzazione in base al tempo di risoluzione}
+\begin{itemize}
+\item Standard: quest senza un limite di tempo di risoluzione.
+\item Temporizzata: quest con un limite di tempo di risoluzione.
+\end{itemize}
 
 
 
