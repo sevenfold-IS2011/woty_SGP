@@ -238,7 +238,29 @@ Questo documento contiene la struttura del sistema Woty, analizzando nel dettagl
 % INTRODUZIONE ( 1° CAPITOLO ) QUESTO CAPITOLO VA MESSO IN OGNI DOCUMENTO!!!!!!!!
 
 \newpage
-\section{Introduzione}
+\section{Descrizione Tecnica}
+Scopo di questa sezione è il descrivere l'architettura generale di Woty.
+
+\subsection{Approccio Client - Server}
+Tutti gli accessi alle risorse vengono effettuati tramite l'istanziazione di un interfaccia da parte di software cliente residente su un terminale, che tramite il protocollo HTTP interagisce con un software servente residente su un computer remoto.\\
+
+
+\begin{center}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.55]{images/Client-server.png}
+\caption{Rappresentazione astratta architettura Client-Server}
+\end{figure}
+\end{center}
+
+
+\subsubsection{Client}
+I Client sono dei software residenti su terminali che permettono l'interazione con il sistema remoto. Per nuove implementazioni su dispositivi, non restringiamo le possibili soluzioni se non per l'obbligo di interazione tramite il protocollo HTTP. 
+			
+\subsubsection{Server}
+Per il diagramma ad oggetti a figura \ref{S-do}, è stata utilizzata la notazione Crow's Foot per descrivere le relazioni tra le entità.
+
+
 
 
 \subsection{Scopo del documento}
