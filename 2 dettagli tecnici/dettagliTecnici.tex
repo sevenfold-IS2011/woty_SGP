@@ -238,12 +238,25 @@ Questo documento contiene la struttura del sistema Woty, analizzando nel dettagl
 % INTRODUZIONE ( 1° CAPITOLO ) QUESTO CAPITOLO VA MESSO IN OGNI DOCUMENTO!!!!!!!!
 
 \newpage
-\section{Descrizione Tecnica}
-Scopo di questa sezione è il descrivere l'architettura generale di Woty.
+\section{Woty - Standard di sviluppo}
+
+\subsection{Webservice}
+\subsubsection{Applicazione Web}
+La scelta del team Sevenfold, per la realizzazione dell'applicazione web, è ricaduta su Ruby on Rails (RoR).\\
+\subsubsection{DBMS}
+IL DBMS utilizzato è MySql. Le caratteristiche del framework RoR, tuttavia, permettono di portare l'applicazione su svariati altri DBMS con il minimo sforzo, essendo RoR \emph{DBMS-agnostic} e le modifiche alla struttura del DB basate su migrazioni (oggetti logici, senza nessun tipo di sintassi SQL che potrebbe essere non supportata in tutti i DBMS).
+
+\subsection{Client Desktop}
+Il client desktop (un piccolo tool di che permette la notifica di quest assegnatae all'utente e l'accesso rapido alla web application di Woty) è stato realizzato in C++ mediante il framework Qt.\\
+Questa scelta è dovuta al fatto che si è voluto garantire la massima compatibilità con i diversi sistemi operativi (il client funziona correttamente su Windows, Linux e OsX). Lo stesso risultato si sarebbe potuto ottenere con Java, ma l'overhead prestazionale della JVM è stato valutato negativo, soprattutto considerando che il client si carica all'avvio dell'OS e resta resident nella toolbar fino alla chiusura. 
+
+\subsection{Client Android}
+Per lo sviluppo del client Android si è utilizzato Java in ambiente Android SDK, scelta obbligata per questo tipo di applicazioni.
+
+\section{Woty - Scelte architetturali}
+In questa sezione verranno discusse le principali scelte architetturali che hanno portato alla realizzazione di Woty. 
 
 \subsection{Approccio Client - Server}
-Tutti gli accessi alle risorse vengono effettuati tramite l'istanziazione di un interfaccia da parte di software cliente residente su un terminale, che tramite il protocollo HTTP interagisce con un software servente residente su un computer remoto.\\
-
 
 \begin{center}
 \begin{figure}[ht]
@@ -253,34 +266,149 @@ Tutti gli accessi alle risorse vengono effettuati tramite l'istanziazione di un 
 \end{figure}
 \end{center}
 
+Il nucleo di Woty, dove viene gestita tutta la logica e vengono mantenuti i dati, risiede su un server centrale. Il server ospita il DBMS contentente i dati persistiti e l'applicazione web che tramite tali dati permette l'interazione con il sistema.\\
+Woty è progettata per essere indipendente dal tipo di client che si interfaccerà con il server. Questo è garantito da un approccio orientato alla risorsa (vedi sezione NUMERO X:Y) e da delle reference API standard. In questo modo la futura estensibilità di Woty verso nuovi tipi di client è non solo possibile, ma soprattutto semplice e realizzabile tramite un minimo costo implementativo.\\
 
-\subsubsection{Client}
-I Client sono dei software residenti su terminali che permettono l'interazione con il sistema remoto. Per nuove implementazioni su dispositivi, non restringiamo le possibili soluzioni se non per l'obbligo di interazione tramite il protocollo HTTP. 
+
+\subsection{Woty: orientato alla risorsa}
+Ogni ''elemento'' interno di woty (e.g. una quest, un utente, un achievement, etc) è offerto all'esterno come \emph{risorsa}. Questo permette la realizzazione di un approccio standard al webservice e garantisce massima estendibilità. \\
+Ogni risorsa è disponibile all'esterno secondo precise regole di business (autorizzazioni, gestione della visibilità, etc.) in modo da aver sì un approccio standard, ma allo stesso tempo di avere un elevato grado di sicurezza, di incapsulamento delle informazioni e una personalizzazione ad-hoc per ogni risorsa senza limiti prestabiliti.
+
+
+\subsection{Approccio RESTful}
+
+Representational State Transfer, di seguito REST, è uno stile architetturale che permette la modellazione dei \emph{business models} tramite \emph{resources} (risorse). Le risorse sono rese accessibili tramite protocollo HTTP sotto forma di web services, e disponibili in varie \emph{representations}. Ogni risorsa espone metodi CRUD (\emph{create}, \emph{read}, \emph{update}, \emph{delete}) che vengono mappati su get, put, post, delete del protocollo HTTP. Il software che adotta questo tipo di struttura è definito come ''orientato alla risorsa''.\\
+
+La tipologia di rappresentazione della risorsa richiesta è identificata sull'estensione del file identificato all'interno dell'uri. Ad esempio, una delle rappresentazioni disponibili è quella che incapsula le informazioni in sorgenti interpretabili da un web browser.\\ 
+
+Un'altra caratteristica di questo approccio è la mancanza di necessità di tenere traccia dello stato. Ogni metodo è sempre disponibile o nascosto, senza dipendenze dallo stato del processo in esecuzione.\\ 
+Tramite questa architettura si ottengono:
+
+\begin{itemize}
 			
-\subsubsection{Server}
-Per il diagramma ad oggetti a figura \ref{S-do}, è stata utilizzata la notazione Crow's Foot per descrivere le relazioni tra le entità.
+\item Possibilità di comporre semplici richieste relazionali direttamente da uri.
+
+\item API pubblica e autenticata, senza necessità di duplicazione di codice
+
+\item Interfaccia di comunicazione tra i gli strati presentation e logic
+
+\item Stretto legame con le risorse effettivamente presenti su database
+
+\item State-less design (anche le sessioni sono modellate su risorse)
+
+\item Sicurezza concentrata su singolo componente (HTTPS)
+			
+\item Disaccoppiamento tra i due strati comunicanti
+\end{itemize}
+
+Questo tipo di approccio aumenta l'estensibilità e la scalabilità del software. Rende inoltre il codice uniformato per risorse, facilmente comprensibile quindi meno dipendente dalle competenze del programmatore. \\
+L'effettiva implementazione del webservice mappa tramite uri non solamente i metodi CRUD ma anche le operazioni (azioni index, show, edit) utili alla effettiva esecuzione dei metodi.\\
+I seguenti metodi sono esplicitati maggiormente nel paragrafo \ref{resource}.
+		
+\begin{longtable}{|p{3cm}|p{5,0cm}|p{3cm}|}
+\caption{HTTP/URI/CRUD}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{HTTP Verb} & \textbf{URI}& \textbf{Action}\\
+\hline
+POST & /resource & CREATE (C)\\
+\hline
+GET & /resource/id & SHOW (R)\\
+\hline
+PUT & /resource/id & UPDATE (U)\\
+\hline
+DELETE & /resource/id & DELETE (D)\\
+\hline
+GET & /resource & INDEX\\
+\hline
+GET & /resource/new & NEW\\
+\hline
+GET & /resource/id/edit & EDIT\\
+\hline
+\end{longtable}
 
 
+\section{Implementazione}
 
+In figura \ref{StrutturaGeneraleSistema} vengono riportate le componenti di implementazione della struttura descritta nella sezione Stili architetturali. Le componenti attualmente previste per lo sviluppo sono denominate: lato server, sistema di notifica, client web e client mobile. 
 
-\subsection{Scopo del documento}
-Con il presente documento su vuole dare una definizione dettagliata dell'architettura del sistema Woty attraverso un approccio top-down. Di ogni sottosistema infatti verrà presentata dapprima la struttura dei componenti, poi verranno specificate le classi, ed infine di ogni classe si indicheranno metodi e campi dati.
-
-
-
-
-\comment{
-CODICE X INCLUDERE UNA IMMAGINE
-(ricordati di mettere l'immagine nella cartella images!!)
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.2]{images/XXXX}
-\caption{Diagramma Gantt}
+\includegraphics[scale=0.6]{images/sistema.png} % vedi Lateximpazienye pg67
+\caption{Struttura generale del sistema}
+\label{StrutturaGeneraleSistema}
 \end{figure}
 
 
-}
+
+\subsubsection{Sottosistema Server: Webservice}
+Il sottosistema server è responsabile della gestione di tutte le risorse di PMAC$^g$. Si occupa di interagire con i client, della conservazione e elaborazione dei dati. L'interazione con i web client è permessa attraverso la visualizzazione di pagine HTML, coadiuvate da fogli di stile CSS e di linguaggio lato client Javascript. L'interazione con i client mobile e i tool di notifica desktop è realizzata attraverso comunicazione di messaggi XML e JSON.
+
+% inserire una figura
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{images/Server/sottosistemaServer.png} % vedi Lateximpazienye pg67
+\caption{Sottosistema Server}
+\end{figure}
+
+
+
+\subsection{Sottosistema Desktop: Tool di notifica}
+
+Il sottosistema Desktop si occupa di gestire la ricezione delle notifiche lato desktop per un utente del tipo Desktop-user$^g$, e consiste in una applicazione di tipo Tray Icon$^g$ semplice ed intuitiva.\\
+Una volta installata l'applicazione nell'apposito computer, il Desktop-user potrà effettuare il login al server PMAC attraverso le proprie credenziali. In questo modo l'applicazione potrà controllare periodicamente la presenza di nuove quest$^g$ da svolgere assegnate allo specifico utente, o in caso contrario, l'utente potrà richiederne di nuove.\\
+Il sottosistema sarà implementato con l'utilizzo del linguaggio di programmazione object oriented C++, e il framework Qt correlato.\\
+Tale sottosistema è stato suddiviso in tre componenti logici come illustrato nella figura \ref{Sottosistema Desktop}.
+
+
+% inserire una figura
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{images/Desktop/sottosistemaDesktop.png} % vedi Lateximpazienye pg67
+\caption{Sottosistema Desktop}
+\label{Sottosistema Desktop}
+\end{figure}
+
+
+
+\subsection{Sottosistema Mobile: Mobile client}
+Il sottosistema mobile prevede lo sviluppo di un applicazione dedicata per il sistema operativo Android che offra all'utente un esperienza di navigazione alla pari, o più simile possibile, a quella offerta da una postazione fissa.\\
+Questo sottosistema prevede l'interazione con il server per il recupero di tutte le informazioni necessarie e offre un servizio di notifiche push per la segnalazione della presenza di nuove Quest disponibili all'utente autenticato dal dispositivo mobile.\\
+Per lo sviluppo architetturale abbiamo scelto di seguire il design pattern MVP, per una massima separazione ed estendibilità del codice.\\
+Sono quindi stati previsti i seguenti componenti principali:
+\begin{itemize}
+\item Componente Model, che rappresenta i dati gestiti dall'applicazione.
+\item Componente View, che consiste nelle classi che gestiscono l'interfaccia grafica proposta all'utente.
+\item Componente Presenter che è incaricato di gestire le interazioni tra View e Model, in particolare riceve le notifiche generate dell'interazione dell'utente con l'interfaccia grafica e porta a termine le dovute funzioni tramite l'interazione con il Model.
+\end{itemize}
+Prevediamo poi l'utilizzo di package di supporto come util ed exceptions che forniscono funzionalità come quelle necessarie al parser$^g$ e alla gestione delle eccezioni. Abbiamo ritenuto di separare questi componenti dal resto della struttura perché non appartengono al design pattern MVP.
+
+% inserire una figura
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{images/Mobile/sottosistemaMobile.png} % vedi Lateximpazienye pg67
+\caption{Sottosistema Mobile}
+\end{figure}
+
+
+\subsection{Web client}
+Il web client è un'interfaccia modulare per l'accesso e la modifica dei contenuti utente. Abbiamo identificato due tipologie di pagine web:
+
+\begin{itemize}
+\item Pagine di accesso alle risorse, derivate dalle necessità CRUD
+\item Pagine statiche, derivate da altri requisiti (es. informazioni del software)
+\end{itemize}
+
+Le prime saranno uniformate rispetto ad ogni tipo di risorsa. Le seconde invece avranno layout e contenuti diversi. Riteniamo molto importante la fluidità e l'esperienza d'uso utente. Perciò ci avvaliamo di librerie esterne sicure per fogli di stile e javascript per il buon funzionamento cross-browser e il gusto visivo. Per le stesse ragioni in particolare Ajax ed elementi dinamici saranno utilizzati per simulare la responsività di una vera applicazione locale.
+
+
 
 
 
