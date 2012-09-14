@@ -1,74 +1,3 @@
-% GUIDA VELOCE:
-% --------------------------------------------------------------------
-% X INIZIA UN UNOVO CAPITOLO:
-% \chapter{??? NOME CAPITOLO}}
-% \section{ ?? }
-% \subsection{ ?? }
-%
-% --------------------------------------------------------------------
-% PAROLA CONTENUTA NEL GLOSSARIO:
-% scrivere la parola seguita da $^g$
-% esempio: User$^g$
-%
-% --------------------------------------------------------------------
-% PER ANDARE A CAPO SENZA RIENTRO INSERIRE:
-% \\
-%
-% --------------------------------------------------------------------
-% GRASSETO:
-% \textbf{parola}
-%
-% --------------------------------------------------------------------
-% CORSIVO:
-% \emph{parola}
-% --------------------------------------------------------------------
-% PER SCRIVERE IN ROSSO:
-% \red{parola}
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE TRA VIRGOLETTE
-% ''parola''
-%
-% --------------------------------------------------------------------
-% PER EVITARE IL RIENTRO AUTOMATICO DI UN CAPOVERSO:
-% \noindent testo....
-%
-% --------------------------------------------------------------------
-
-% PER SCRIVERE CARATTERI PARTICOLARI COME: { } _ ecc.. SCRIVERLI PRECEDUTI DA \
-% ES: \{ \_
-%
-% --------------------------------------------------------------------
-% X INSERIRE UN LINK:
-% \url{http://www.math.unipd.it/~tullio/IS-1/2011/Progetto/C3.pdf}
-%
-% --------------------------------------------------------------------
-% PER COMMENTARE INTERE PARTI:
-% \comment{ comment }
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE NOTE DURANTE IL TESTO:
-% parola \footnote{ note riguardanti la parola }
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE CODICE SORGENTE:
-%
-% \lstset{language=c++,
-% stringstyle=\color{blue}\textrm,
-% commentstyle=\rmfamily, numbers= none}
-
-% \begin{lstlisting}
-% CODICE
-% \end{lstlisting}
-%
-% --------------------------------------------------------------------
-% !!!!!!!! PER COSE + COMPLESSE VEDI: !!!!!!!!!!!!!!!!!!!!!!!
-% !!!!!!!! PMAC/latex/GUIDA LATEX!!!.tex !!!!!!!!!!!!!!!!!!!!!!!
-
-% per tutto il resto chiedi a lory prima di fare/scrivere cazzate !!!!!!!!!!
-
-
-
 \documentclass[10pt,a4paper]{article}
 
 \usepackage[italian]{babel}
@@ -148,7 +77,7 @@
 
 % INSERIRE QUI IL NOME DEL DOCUMENTO SEGUITO DA UNO SPAZIO
 % ( così il nome si imposta in automatico nelle varie ricorrenze standard)
-\newcommand{\NomeDocumento}{Scrivi in questo documento k poi uniamo tutto }
+\newcommand{\NomeDocumento}{Scrivi in questo documento che poi uniamo tutto }
 
 % INSERIRE QUI LA DATA DEL RILASCIO DELLA VERSIONE ATTUALE
 \newcommand{\DataRilascio}{2012/04/02}
@@ -235,29 +164,147 @@ Questo documento contiene la struttura del sistema Woty, analizzando nel dettagl
 
 % --------------------------------------------------------------------
 
-% INTRODUZIONE ( 1° CAPITOLO ) QUESTO CAPITOLO VA MESSO IN OGNI DOCUMENTO!!!!!!!!
+% (CAP.6) ANALISI DEI COSTI
 
-\newpage
-\section{Introduzione}
+\chapter{Analisi dei costi}
+In questo capitolo vengono discussi i costi e i guadagni previsti dall'adozione del modello di business \red{AGASVAGA}. Saranno inoltre riportati e discussi i tempi e i costi dedicati allo sviluppo di questo progetto.
+
+\section{Prospetto riassuntivo business model}
+Di seguito si riportano costi e guadagni previsti dal business model.
+
+\subsection{Costi iniziali}
+
+\subsection{Costi fissi}
+
+\subsection{Costi variabili}
+
+\subsection{Analisi di Breakeven}
+
+\subsection{Utenti e guadagni previsti}
 
 
-\subsection{Scopo del documento}
-Con il presente documento su vuole dare una definizione dettagliata dell'architettura del sistema Woty attraverso un approccio top-down. Di ogni sottosistema infatti verrà presentata dapprima la struttura dei componenti, poi verranno specificate le classi, ed infine di ogni classe si indicheranno metodi e campi dati.
+\section{Consuntivo finale del progetto}
+
+Di seguito è riportato il riassunto del quantitativo orario che ogni risorsa ha dedicato al progetto, l'indicazione del costo medio orario (CMO) ed un prospetto indicante i costi totali sostenuti per il progetto.
+Questi dati sono stati calcolati nella fase finale del progetto e rappresentano il costo finale del lavoro svolto dalle varie figure professionali impegnate nel progetto per il committente. 
+Il consuntivo deve essere confrontato con il preventivo realizzato nelle fasi preliminari per avere un migliore riscontro delle variazioni rispetto alla previsione iniziale.
 
 
+\begin{longtable}{ | p{6cm} | p{4.4cm} |}
+\caption{Compenso orario delle figure professionali}\\
+\hline
+\endfirsthead
+\multicolumn{2}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{2}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Figura professionale} \ & \textbf{CMO}\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo progetto & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto sicurezza & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto infrastrutture informatiche & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo programmatore & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto gamification & \red{???} \\
+\hline
+\end{longtable}
 
+Dopo aver osservato il compenso orario per ogni figura impegnata nel progetto viene visualizzato il costo totale dato dal lavoro di ognuna di esse.
+
+\begin{longtable}{ | p{6cm} | p{3.5cm} | p{4cm} |}
+\caption{Consuntivo costi per ogni figura professionale}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Figura professionale} \ & \textbf{Ore consuntivate} \ & \textbf{Costi consuntivati} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo progetto & \red{???} & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto sicurezza & \red{???} & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto infrastrutture informatiche & \red{???} & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo programmatore & \red{???} & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto gamification & \red{???} & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+\textbf{Totale} & \textbf{\red{???}} & \textbf{\red{???}} \\
+\hline
+\end{longtable}
+
+Si analizzano ora le variazioni alle ore e ai costi preventivati pe ogni ruolo.
+
+\begin{itemize}
+	\item \textbf{Capo progetto:} ...
+	\item \textbf{Esperto sicurezza:} ...
+	\item \textbf{Esperto infrastrutture informatiche:} ...
+	\item \textbf{Capo programmatore:} ...
+	\item \textbf{Esperto gamification:} ...
+\end{itemize}
+
+Si riassumono infine le variazioni nei costi dal punto di vista delle varie fasi svolte nello sviluppo del progetto.
+
+\begin{longtable}{ | p{6cm} | p{4.4cm} |}
+\caption{Consuntivo costi per fase di progetto}\\
+\hline
+\endfirsthead
+\multicolumn{2}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{2}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Fase di progetto} \ & \textbf{Costi consuntivati}\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Analisi e pianificazione iniziale & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Analisi di mercato & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Studio di fattibilità & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Progettazione business model & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Stima rischi/Stima costi \red{??} & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+\textbf{Totale} & \textbf{\red{???}} \\
+\hline
+\end{longtable}
+
+\textbf{\red{CONSIDERAZIONI FINALI}}
 
 \comment{
-CODICE X INCLUDERE UNA IMMAGINE
-(ricordati di mettere l'immagine nella cartella images!!)
-
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.2]{images/XXXX}
 \caption{Diagramma Gantt}
 \end{figure}
-
-
 }
 
 
