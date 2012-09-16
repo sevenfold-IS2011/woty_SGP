@@ -184,7 +184,7 @@ In questa sezione verranno discusse le principali scelte architetturali che hann
 \end{center}
 
 Il nucleo di Woty, dove viene gestita tutta la logica e vengono mantenuti i dati, risiede su un server centrale. Il server ospita il DBMS contentente i dati persistiti e l'applicazione web che tramite tali dati permette l'interazione con il sistema.\\
-Woty è progettata per essere indipendente dal tipo di client che si interfaccerà con il server. Questo è garantito da un approccio orientato alla risorsa (vedi sezione NUMERO X:Y) e da delle reference API standard. In questo modo la futura estensibilità di Woty verso nuovi tipi di client è non solo possibile, ma soprattutto semplice e realizzabile tramite un minimo costo implementativo.\\
+Woty è progettata per essere indipendente dal tipo di client che si interfaccerà con il server. Questo è garantito da un approccio orientato alla risorsa e da delle reference API standard. In questo modo la futura estensibilità di Woty verso nuovi tipi di client è non solo possibile, ma soprattutto semplice e realizzabile tramite un minimo costo implementativo.\\
 
 
 \subsection{Woty: orientato alla risorsa}
@@ -392,7 +392,6 @@ Nel diagramma è rappresentato come è mappata una resource generica secondo il 
 \end{figure}
 
 Questo diagramma vuole mostrare come ogni classe logica disponibile nel webservice sia in realtà una risorsa. Le relazioni e le dipendenze più dettagliate tra le classi saranno visibili in seguito nel diagramma degli oggetti in figura \ref{S-do}.\\
-La descrizione delle classi è riportata nella sezione \ref{modello} Modello.
 
 
 \subsubsection{Diagramma ad oggetti}
