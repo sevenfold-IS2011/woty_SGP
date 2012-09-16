@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{book}
 
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
@@ -13,6 +13,7 @@
 % setta i bordi della pagina: dx e sx 3.2cm di rientro + nel lato di rilagatura rientra di altri 0mm
 \usepackage[a4paper,top=3cm,bottom=3cm,left=3.2cm,right=3.2cm, bindingoffset=0mm]{geometry}
 \usepackage{listings} % per inserire codice sorgente
+\usepackage{marvosym} % per scrivere il simbolo €
 \usepackage{float} % per gestire oggetti flottanti ( es immagini tabelle posizionebili con "H" che forza il posizionamento nel punto specifico )
 
 % serve per creare tabelle lunghe + di una pagina con \begin{longtable} (vd Tabelle.pdf pg11-12)
@@ -167,21 +168,96 @@ Questo documento contiene la struttura del sistema Woty, analizzando nel dettagl
 % (CAP.6) ANALISI DEI COSTI
 
 \chapter{Analisi dei costi}
+
 In questo capitolo vengono discussi i costi e i guadagni previsti dall'adozione del modello di business \red{AGASVAGA}. Saranno inoltre riportati e discussi i tempi e i costi dedicati allo sviluppo di questo progetto.
 
 \section{Prospetto riassuntivo business model}
+
+\subsection{Consuntivo per la prima realizzazione del Software Woty}
+
+\red{LORY DIO£!\#?, PER ME STA ROBA NON CENTRA UN CA**O!}\\
+Di seguito viene proposto il consuntivo economico ed il riassunto della suddivisione dei ruoli effettuata dal gruppo durante il primo  sviluppo del prodotto software denominato \texttt{Woty}.\\
+
+I costi della fase di sviluppo del software sono stati calcolati in funzione dei costi orari riportati nella seguente tabella:
+
+\begin{longtable}{|p{4cm} p{1cm}|p{3cm}|}
+\caption{Costi/Ora per ruolo}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+
+\endlastfoot
+\textbf{Ruolo}& \textbf{}& \textbf{Costo/Ora in \EUR}\\
+\hline
+Responsabile	& (RE) & 30\\
+\hline
+Amministratore	& (AM) & 20\\
+\hline
+Analista	    & (AN) & 25\\
+\hline
+Progettista	    & (PT) & 22\\
+\hline
+Programmatore	& (PM) & 15\\
+\hline
+Verificatore	& (VR) & 15\\
+\hline
+\end{longtable}
+
+Di seguito si riportano i costi sostenuti per ogni ruoli impiegato nello sviluppo del progetto in forma tabellare.
+
+\begin{table}[H]
+\caption{Consuntivo costi totale}
+\label{costiTotaliConsuntivo}
+\centering
+\begin{tabular}{|p{3cm} | p{1cm}|p{1cm}| p{1cm}| p{1cm}| p{1cm}| p{1cm}| p{1cm}|}
+\hline
+\textbf{Ruolo}           & RE   &   AM  &   AN  &  PT  &  PM  &  VR  &  Totale      \\
+\hline
+\textbf{Consuntivo} 		 & 900  &  1060 &  1750 & 3652 & 2295 & 3945 & \textbf{13602} \\
+\hline
+\end{tabular}
+\end{table}
+
+In figura \ref{costiTotPerRuoloCons} viene proposta la ripartizione dei costi totali per ruolo utilizzato nel progetto.
+
+% inserire una figura
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.25]{images/costiPerRuoloConsuntivo.png} % vedi Lateximpazienye pg67
+\caption{Costi totali per ruolo}
+\label{costiTotPerRuoloCons}
+\end{figure}
+
+
+\newpage
+
+\subsection{Analisi dei costi del business model}
+
 Di seguito si riportano costi e guadagni previsti dal business model.
 
-\subsection{Costi iniziali}
+\subsubsection{Costi iniziali}
+\begin{itemize}
+	\item \textbf{Primo sviluppo del software:} 13602 \EUR.
+	\item \textbf{Nuove funzionalità tecniche:} (se ci sono)
+	\item \textbf{Consulenza legale:} (se ci servirà)
+	\item \textbf{Campagna di marketing:} (...)
+\end{itemize}
 
-\subsection{Costi fissi}
 
-\subsection{Costi variabili}
+\subsubsection{Costi fissi}
 
-\subsection{Analisi di Breakeven}
+\begin{itemize}
+	\item \textbf{Manutenzione acquisto o la locazione del server:} (...)
+\end{itemize}
 
-\subsection{Utenti e guadagni previsti}
+\subsubsection{Costi variabili}
 
+\subsubsection{Utenti e guadagni previsti}
+
+\subsubsection{Analisi di Breakeven}
 
 \section{Consuntivo finale del progetto}
 
