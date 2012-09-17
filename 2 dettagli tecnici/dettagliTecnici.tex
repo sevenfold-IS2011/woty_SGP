@@ -1,74 +1,3 @@
-% GUIDA VELOCE:
-% --------------------------------------------------------------------
-% X INIZIA UN UNOVO CAPITOLO:
-% \chapter{??? NOME CAPITOLO}}
-% \section{ ?? }
-% \subsection{ ?? }
-%
-% --------------------------------------------------------------------
-% PAROLA CONTENUTA NEL GLOSSARIO:
-% scrivere la parola seguita da $^g$
-% esempio: User$^g$
-%
-% --------------------------------------------------------------------
-% PER ANDARE A CAPO SENZA RIENTRO INSERIRE:
-% \\
-%
-% --------------------------------------------------------------------
-% GRASSETO:
-% \textbf{parola}
-%
-% --------------------------------------------------------------------
-% CORSIVO:
-% \emph{parola}
-% --------------------------------------------------------------------
-% PER SCRIVERE IN ROSSO:
-% \red{parola}
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE TRA VIRGOLETTE
-% ''parola''
-%
-% --------------------------------------------------------------------
-% PER EVITARE IL RIENTRO AUTOMATICO DI UN CAPOVERSO:
-% \noindent testo....
-%
-% --------------------------------------------------------------------
-
-% PER SCRIVERE CARATTERI PARTICOLARI COME: { } _ ecc.. SCRIVERLI PRECEDUTI DA \
-% ES: \{ \_
-%
-% --------------------------------------------------------------------
-% X INSERIRE UN LINK:
-% \url{http://www.math.unipd.it/~tullio/IS-1/2011/Progetto/C3.pdf}
-%
-% --------------------------------------------------------------------
-% PER COMMENTARE INTERE PARTI:
-% \comment{ comment }
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE NOTE DURANTE IL TESTO:
-% parola \footnote{ note riguardanti la parola }
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE CODICE SORGENTE:
-%
-% \lstset{language=c++,
-% stringstyle=\color{blue}\textrm,
-% commentstyle=\rmfamily, numbers= none}
-
-% \begin{lstlisting}
-% CODICE
-% \end{lstlisting}
-%
-% --------------------------------------------------------------------
-% !!!!!!!! PER COSE + COMPLESSE VEDI: !!!!!!!!!!!!!!!!!!!!!!!
-% !!!!!!!! PMAC/latex/GUIDA LATEX!!!.tex !!!!!!!!!!!!!!!!!!!!!!!
-
-% per tutto il resto chiedi a lory prima di fare/scrivere cazzate !!!!!!!!!!
-
-
-
 \documentclass[10pt,a4paper]{article}
 
 \usepackage[italian]{babel}
@@ -148,7 +77,7 @@
 
 % INSERIRE QUI IL NOME DEL DOCUMENTO SEGUITO DA UNO SPAZIO
 % ( così il nome si imposta in automatico nelle varie ricorrenze standard)
-\newcommand{\NomeDocumento}{Scrivi in questo documento k poi uniamo tutto }
+\newcommand{\NomeDocumento}{Scrivi in questo documento che poi uniamo tutto }
 
 % INSERIRE QUI LA DATA DEL RILASCIO DELLA VERSIONE ATTUALE
 \newcommand{\DataRilascio}{2012/04/02}
@@ -238,20 +167,8 @@ Questo documento contiene la struttura del sistema Woty, analizzando nel dettagl
 % INTRODUZIONE ( 1° CAPITOLO ) QUESTO CAPITOLO VA MESSO IN OGNI DOCUMENTO!!!!!!!!
 
 \newpage
-\section{Woty - Standard di sviluppo}
 
-\subsection{Webservice}
-\subsubsection{Applicazione Web}
-La scelta del team Sevenfold, per la realizzazione dell'applicazione web, è ricaduta su Ruby on Rails (RoR).\\
-\subsubsection{DBMS}
-IL DBMS utilizzato è MySql. Le caratteristiche del framework RoR, tuttavia, permettono di portare l'applicazione su svariati altri DBMS con il minimo sforzo, essendo RoR \emph{DBMS-agnostic} e le modifiche alla struttura del DB basate su migrazioni (oggetti logici, senza nessun tipo di sintassi SQL che potrebbe essere non supportata in tutti i DBMS).
-
-\subsection{Client Desktop}
-Il client desktop (un piccolo tool di che permette la notifica di quest assegnatae all'utente e l'accesso rapido alla web application di Woty) è stato realizzato in C++ mediante il framework Qt.\\
-Questa scelta è dovuta al fatto che si è voluto garantire la massima compatibilità con i diversi sistemi operativi (il client funziona correttamente su Windows, Linux e OsX). Lo stesso risultato si sarebbe potuto ottenere con Java, ma l'overhead prestazionale della JVM è stato valutato negativo, soprattutto considerando che il client si carica all'avvio dell'OS e resta resident nella toolbar fino alla chiusura. 
-
-\subsection{Client Android}
-Per lo sviluppo del client Android si è utilizzato Java in ambiente Android SDK, scelta obbligata per questo tipo di applicazioni.
+\chapter{Dettagli tecnici}
 
 \section{Woty - Scelte architetturali}
 In questa sezione verranno discusse le principali scelte architetturali che hanno portato alla realizzazione di Woty. 
@@ -267,7 +184,7 @@ In questa sezione verranno discusse le principali scelte architetturali che hann
 \end{center}
 
 Il nucleo di Woty, dove viene gestita tutta la logica e vengono mantenuti i dati, risiede su un server centrale. Il server ospita il DBMS contentente i dati persistiti e l'applicazione web che tramite tali dati permette l'interazione con il sistema.\\
-Woty è progettata per essere indipendente dal tipo di client che si interfaccerà con il server. Questo è garantito da un approccio orientato alla risorsa (vedi sezione NUMERO X:Y) e da delle reference API standard. In questo modo la futura estensibilità di Woty verso nuovi tipi di client è non solo possibile, ma soprattutto semplice e realizzabile tramite un minimo costo implementativo.\\
+Woty è progettata per essere indipendente dal tipo di client che si interfaccerà con il server. Questo è garantito da un approccio orientato alla risorsa e da delle reference API standard. In questo modo la futura estensibilità di Woty verso nuovi tipi di client è non solo possibile, ma soprattutto semplice e realizzabile tramite un minimo costo implementativo.\\
 
 
 \subsection{Woty: orientato alla risorsa}
@@ -333,11 +250,27 @@ GET & /resource/id/edit & EDIT\\
 \hline
 \end{longtable}
 
+\section{Woty - Standard di sviluppo}
 
-\section{Implementazione}
+\subsection{Webservice}
+\subsubsection{Applicazione Web}
+La scelta del team Sevenfold, per la realizzazione dell'applicazione web, è ricaduta su Ruby on Rails (RoR).\\
+Ruby on Rails, di seguito RoR, è un framework opensource relativamente giovane sviluppato sul linguaggio interpretato Ruby. La caratteristica principale che lo differenzia rispetto alla concorrenza consta nella community di contributors che direttamente o indirettamente rendono disponibili librerie facilmente installabili tramite RubyGems. Il framework rende estremamente astratta la modellazione della realtà sollevando il programmatore dalla progettazione di buona parte della struttura architetturale di un software basato sul web. 
+\\Per il suo utilizzo cosciente quindi è necessaria la conoscenza del dietro le quinte, che a sua volta ha bisogno di competenze acquisite in precedenza riguardo paradigmi, design pattern e best practice di programmazione.
+\subsubsection{DBMS}
+IL DBMS utilizzato è MySql. Le caratteristiche del framework RoR, tuttavia, permettono di portare l'applicazione su svariati altri DBMS con il minimo sforzo, essendo RoR \emph{DBMS-agnostic} e le modifiche alla struttura del DB basate su migrazioni (oggetti logici, senza nessun tipo di sintassi SQL che potrebbe essere non supportata in tutti i DBMS).
 
-In figura \ref{StrutturaGeneraleSistema} vengono riportate le componenti di implementazione della struttura descritta nella sezione Stili architetturali. Le componenti attualmente previste per lo sviluppo sono denominate: lato server, sistema di notifica, client web e client mobile. 
+\subsection{Client Desktop}
+Il client desktop (un piccolo tool di che permette la notifica di quest assegnatae all'utente e l'accesso rapido alla web application di Woty) è stato realizzato in C++ mediante il framework Qt.\\
+Questa scelta è dovuta al fatto che si è voluto garantire la massima compatibilità con i diversi sistemi operativi (il client funziona correttamente su Windows, Linux e OsX). Lo stesso risultato si sarebbe potuto ottenere con Java, ma l'overhead prestazionale della JVM è stato valutato negativo, soprattutto considerando che il client si carica all'avvio dell'OS e resta resident nella toolbar fino alla chiusura. 
 
+\subsection{Client Android}
+Nel nostro ambito Java viene utilizzato per la creazione di un'applicazione interfacciabile su dispositivi mobile con sistema operativo Android. La versione utilizzata è Android SDK 2.2, al fine di permettere alla quasi totalità dei dispositivi di ricevere notifiche push. Questo tipo di notifiche è reso possibile attraverso C2DM (Android Cloud to Device Messaging Framework). Le librerie grafiche utilizzate sono quelle fornite da Android, mentre per l'interfacciamento al Cloud è stato fatto riuso di codice messo a disposizione direttamente dal team di Google. 
+
+
+\section{Architettura soluzione}
+
+In figura \ref{StrutturaGeneraleSistema} viene riportata l'architettura generale della soluzione. Le componenti sono denominate: lato server, sistema di notifica, client web e client mobile. 
 
 \begin{figure}[H]
 \centering
@@ -348,8 +281,8 @@ In figura \ref{StrutturaGeneraleSistema} vengono riportate le componenti di impl
 
 
 
-\subsubsection{Sottosistema Server: Webservice}
-Il sottosistema server è responsabile della gestione di tutte le risorse di PMAC$^g$. Si occupa di interagire con i client, della conservazione e elaborazione dei dati. L'interazione con i web client è permessa attraverso la visualizzazione di pagine HTML, coadiuvate da fogli di stile CSS e di linguaggio lato client Javascript. L'interazione con i client mobile e i tool di notifica desktop è realizzata attraverso comunicazione di messaggi XML e JSON.
+\subsection{Sottosistema Server: Webservice}
+Il sottosistema server è responsabile della gestione di tutte le risorse di PMAC. Si occupa di interagire con i client, della conservazione e elaborazione dei dati. L'interazione con i web client è permessa attraverso la visualizzazione di pagine HTML, coadiuvate da fogli di stile CSS e di linguaggio lato client Javascript. L'interazione con i client mobile e i tool di notifica desktop è realizzata attraverso comunicazione di messaggi XML e JSON.
 
 % inserire una figura
 \begin{figure}[H]
@@ -358,12 +291,13 @@ Il sottosistema server è responsabile della gestione di tutte le risorse di PMA
 \caption{Sottosistema Server}
 \end{figure}
 
+Nel presente documento è presente anche una descrizione più in dettaglio dell'architettura del sottosistema server, in modo da poter comprendere l'interfaccia che il webservice offre all'esterno, oltre che alle logiche interne.
 
 
 \subsection{Sottosistema Desktop: Tool di notifica}
 
-Il sottosistema Desktop si occupa di gestire la ricezione delle notifiche lato desktop per un utente del tipo Desktop-user$^g$, e consiste in una applicazione di tipo Tray Icon$^g$ semplice ed intuitiva.\\
-Una volta installata l'applicazione nell'apposito computer, il Desktop-user potrà effettuare il login al server PMAC attraverso le proprie credenziali. In questo modo l'applicazione potrà controllare periodicamente la presenza di nuove quest$^g$ da svolgere assegnate allo specifico utente, o in caso contrario, l'utente potrà richiederne di nuove.\\
+Il sottosistema Desktop si occupa di gestire la ricezione delle notifiche lato desktop per un utente del tipo Desktop-user, e consiste in una applicazione di tipo Tray Icon semplice ed intuitiva.\\
+Una volta installata l'applicazione nell'apposito computer, il Desktop-user potrà effettuare il login al server PMAC attraverso le proprie credenziali. In questo modo l'applicazione potrà controllare periodicamente la presenza di nuove quest da svolgere assegnate allo specifico utente, o in caso contrario, l'utente potrà richiederne di nuove.\\
 Il sottosistema sarà implementato con l'utilizzo del linguaggio di programmazione object oriented C++, e il framework Qt correlato.\\
 Tale sottosistema è stato suddiviso in tre componenti logici come illustrato nella figura \ref{Sottosistema Desktop}.
 
@@ -388,7 +322,7 @@ Sono quindi stati previsti i seguenti componenti principali:
 \item Componente View, che consiste nelle classi che gestiscono l'interfaccia grafica proposta all'utente.
 \item Componente Presenter che è incaricato di gestire le interazioni tra View e Model, in particolare riceve le notifiche generate dell'interazione dell'utente con l'interfaccia grafica e porta a termine le dovute funzioni tramite l'interazione con il Model.
 \end{itemize}
-Prevediamo poi l'utilizzo di package di supporto come util ed exceptions che forniscono funzionalità come quelle necessarie al parser$^g$ e alla gestione delle eccezioni. Abbiamo ritenuto di separare questi componenti dal resto della struttura perché non appartengono al design pattern MVP.
+Prevediamo poi l'utilizzo di package di supporto come util ed exceptions che forniscono funzionalità come quelle necessarie al parser e alla gestione delle eccezioni. Abbiamo ritenuto di separare questi componenti dal resto della struttura perché non appartengono al design pattern MVP.
 
 % inserire una figura
 \begin{figure}[H]
@@ -408,8 +342,119 @@ Il web client è un'interfaccia modulare per l'accesso e la modifica dei contenu
 
 Le prime saranno uniformate rispetto ad ogni tipo di risorsa. Le seconde invece avranno layout e contenuti diversi. Riteniamo molto importante la fluidità e l'esperienza d'uso utente. Perciò ci avvaliamo di librerie esterne sicure per fogli di stile e javascript per il buon funzionamento cross-browser e il gusto visivo. Per le stesse ragioni in particolare Ajax ed elementi dinamici saranno utilizzati per simulare la responsività di una vera applicazione locale.
 
+\section{Architettura sottosistema Server}
+
+\subsection{Modalità di descrizione}
+Nella presente sezione non verrà descritta ogni classe nel dettaglio, ma verrà utilizzato un approccio più ad alto livello, orientato alle funzionalità che il webservice offre verso l'esterno.
+Le richieste esterne verranno effettuate attraverso l'interfaccia REST precedentemente specificata. Le richieste, quindi, saranno tutte verso risorse disponibili nel webservice. \\
+Per questo motivo i diagrammi che seguono saranno orientati alla \emph{risorsa}, le varie classi rappresenteranno una classe logica per le risorse e per le risposte che il webservice può dare ad un generico client.
+
+\subsection{Diagramma delle classi}
+
+\subsubsection{HttpResponse}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{images/Server/HttpResponse.png}
+\caption{Server - HttpResponse}
+\end{figure}
+
+Lo scopo del diagramma è il presentare le risposte che il webservice può dare ad un generico client. Di seguito la descrizione delle classi:
+
+\begin{itemize}
+\item Classe HttpResponse: rappresenta la risposta HTTP che il webservice restituisce in seguito ad una richiesta REST. E' idealmente caratterizzata da 3 attributi:
+\begin{itemize}
+\item HTTP\_status\_code: è un intero che rappresenta l'esito della richiesta (e.g. 201 = Created, 401 = Unauthorized)
+\item header: contiene meta-informazioni sul contenuto del payload
+\item payload: è l'effettivo messaggio trasmesso tramite HTTP 
+\end{itemize}
+\item Classe ResEditor: è una HttpResponse contenente una vista HTML con la quale è possibile modificare i campi di una risorsa. Genericamente, una form.
+\item Classe ResCreator: è una HttpResponse contenete una vista HTML con la quale è possibile creare una risorsa. Anche in questo caso, genericamente è una form.
+\item Classe ResListRepresentation:  è una HttpResponse contente lista di istanze di una generica risorsa. Da essa ereditano le classe XMLResListRepresentation, HtmlResListRepresentation, JsonResListRepresentation le quali incapsulano la lista in, rispettivamente, XML, HTML, JSON.
+\item Classe ResRepresentation: è una HttpResponse contenete una vista HTML che visualizza una risorsa.Da essa ereditano le classe XMLResRepresentation, HtmlResRepresentation, JsonResRepresentation le quali incapsulano la risorsa in, rispettivamente, XML, HTML, JSON.
+\end{itemize}
+
+\subsubsection{Resource}
+\label{resource}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.70]{images/Server/MvcResource.png}
+\caption{Server - Resource generica}
+\end{figure}
+
+Nel diagramma è rappresentato come è mappata una resource generica secondo il modello model-view-controller del framework RoR.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.50]{images/Server/Resource.png}
+\caption{Server - Resource}
+\end{figure}
+
+Questo diagramma vuole mostrare come ogni classe logica disponibile nel webservice sia in realtà una risorsa. Le relazioni e le dipendenze più dettagliate tra le classi saranno visibili in seguito nel diagramma degli oggetti in figura \ref{S-do}.\\
 
 
+\subsubsection{Diagramma ad oggetti}
+Il seguente diagramma ad oggetti vuole mettere in evidenza come una risorsa sia effettivamente una tabella nel DB, e le relazioni tra le varie risorse.
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.55]{images/Server/Oggetti.png}
+\caption{Server - Diagramma ad oggetti}
+\label{S-do}  % S-do = Server - diagramma oggetti
+\end{figure}
 
+Da notare il fatto che dalle relazioni N:M nascano delle risorse:
+
+\begin{itemize}
+	\item Dalla relazione Users <-> Quests nasce la risorsa QuestAttempt.
+	\item Dalla relazione Users <-> Achievements nasce la risorsa ReachedAchievent.
+	\item Dalla relazione Users <-> Badge nasce la risorsa EarnedBadge.
+\end{itemize}
+
+Altri punti che meritano una spiegazione:
+
+\begin{itemize}
+	\item Dalla relazione N:M WorkGroups <-> QuestCategories è stato deciso di non far emergere una risorsa, seppur una tabella debba necessariamente essere creata.
+	\item L'entità WGCategories è una tabella nata per evitare ridondanze nella denominazione dei WorkGroup, non è stato quindi ritenuto necessario mapparla come risorsa.
+\end{itemize}
+
+\subsection{Descrizione risorse}
+Verrà di seguito riportata una descrizione delle risorse di Woty, in modo da poter meglio comprendere cosa rappresentano e quali relazioni presentano tra di esse
+
+\subsubsection{User} Utente base registrato al sistema. Classe base della gerarchia di utenti.
+\subsubsection{SuperUser} Utente con priviliegi di SuperUser
+\subsubsection{DesktopUser} Utente Desktop
+\subsubsection{MobileUser} Utente Mobile
+\subsubsection{Admin} Amministratore di Woty
+\subsubsection{Customer} Risorsa che modella i clienti del fornitore del servizio. Ogni customer ha vari workgroup che a loro volta contengono una serie di user. Ogni customer inoltre sottoscrive un plan, che definisce il livello di servizio per il customer.\\
+I costi quindi, sono calcolati tra questa classe e la classe Plan. Nel sistema è un'entità molto importante in quanto tutti gli utenti fruiscono dei contenuti all’interno del loro customer.\\
+\subsubsection{WorkGroup} Classe che rappresenta un reparto di un’azienda cliente, che sono composti dagli utenti facenti parte dello stesso.\\
+Gli utenti in reparti lavorano anche in team, e sono disponibili classifiche di reparto. Sono inoltre utilizzati per l’assegnazione delle quest, in quanto il reparto è una delle caratteristiche per le quali sono influenzate le categorie di rischio.
+\subsubsection{Plan}Risorsa che modella le formule d’acquisto del prodotto. Il paradigma Software as a Service uniforma nel miglior modo possibile il maggior numero di clienti.\\
+Per il nostro caso possono essere sottoscritti vari piani di acquisto e nel caso in cui il cliente necessiti di caratteristiche personali è possibile assegnare dei plan privati.\\
+All’interno del plan sono definite alcune abilità che possono o meno essere utilizzate a seconda del prezzo pagato.
+\subsubsection{Quest} La classe modella le quest e la loro composizione. Di fatto le quest sono composte di una descrizione e una sfida: entrambe possono essere di vario tipo e sono rappresentate tramite gerarchie.
+Le quest inoltre hanno una categoria che può essere inclusa in un workgroup: gli utenti facenti parte sono in grado di svolgere le quest con le categorie associate.
+\subsubsection{QuestDescription}Classe base della gerarchia inerente le tipologie di descrizione di una quest. La gerarchia è utilizzata per la composizione di una quest.
+\subsubsection{TextDescription} Rappresenta una QuestDescription che contiene solo testo.
+\subsubsection{ImageDescription} Rappresenta una QuestDescription che contiene un'immagine.
+\subsubsection{VideoDescription} Rappresenta una QuestDescription che contiene un video.
+\subsubsection{QuestChallenge} Classe base per le sfide delle quest. Rappresenta il componente sfida delle quest che può essere di varie tipologie, definite tramite le sottoclassi.
+\subsubsection{ComboChallenge} Classe che rappresenta un quesito a risposta multipla con una ed una sola risposta corretta.
+\subsubsection{TrueFalseChallenge} La classe modella una tipologia particolare di QuestChallenge contenente più affermazioni, ognuna delle quale può essere vera o falsa.
+\subsubsection{MultiOptionChallenge} La classe modella una tipologia particolare di QuestChallenge contenente più affermazioni, ognuna delle quale può essere valida o meno. Si differenzia da TrueFalseChallenge a livello logico, in quanto più che possibili affermazioni che possono essere vere e false, modella possibili opzioni che possono essere valide o meno.
+\subsubsection{Achievement} Gli achievement sono modellati tramite una serie di condizioni legate dall’operatore logico AND. Per semplicità di implementazione non si è ritenuta necessaria l’implementazione di altri operatori logici. La validità di un achievement è calcolata per uno user e valida tutte le condizioni associate.
+\subsubsection{Like} Like è la risorsa che modella i like effettuati dagli utenti. Attualmente
+è possibile effettuare i like solo su elementi membri della gerarchia StreamElement.
+\subsubsection{StreamElemet}StreamElement è la classe base per gli elementi di attività visibili nel pannello utente. Le attività possono essere di vario genere, permettono l’interazione tramite like e commenti, e costituiscono il principale elemento social del sistema.
+\subsubsection{QuestHistory} Una QuestHistory relaziona uno User con una Quest. Viene creata
+quando uno User svolge una Quest oppure quando il sistema assegna ad uno User una Quest.
+\subsubsection{Ticket}Rappresenta un Ticket creato da un SuperUser e rivolto al/agli Admin del sistema.
+\subsubsection{CompletedAchievement}Rappresenta un achievement ottenuto da un utente.
+\subsubsection{CompletedAchievementElement}Specializzazione della classe StreamElement che rappresenta l’ottenimento di un achievement da parte di un utente.
+\subsubsection{Condition}La classe modella una condizione necessaria al completamento di un achievement. Le condizioni sono composte da un operatore, uno dei valori definiti in Achievable, e un valore fissato dal creatore. Abbiamo deciso di limitare la libertà di creazione delle condizioni, in quanto altre soluzioni sarebbero state troppo complesse da implementare. Il sistema le rende comunque generabili dinamicamente.
+\subsubsection{CustomQuest}Modella una Quest personalizzata, disponibile solo ad un determinato Workgroup
+\subsubsection{QuestCategory}Identifica una categoria di rischio al quale una SharedQuest è associata
+\subsubsection{SharedQuest}Rappresenta una Quest condivisa tra più Workgroup
 \end{document}
