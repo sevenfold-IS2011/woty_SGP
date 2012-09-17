@@ -91,7 +91,8 @@
 
 \usepackage{fancyhdr} % per impostare lo stile della pagina più personalizzato, + fancyhdr ( per regolare testatina e piè di pagina ) vedi itfancyhrd
 
-
+%per \EUR
+\usepackage{marvosym}
 
 \pagestyle{fancy}
 % settaggi di pagestyle(fancy)
@@ -342,7 +343,7 @@ Il nostro team per garantire un adeguata qualità del lavoro si impegna a seguir
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.25]{images/Gantt.png}
+\includegraphics[scale=0.4]{images/Gantt.png}
 \caption{Gannt}
 \end{figure}
 
@@ -377,19 +378,117 @@ Dato il grado non troppo elevato di questa fase dovuta ad una progettazione stru
 \item Stima costi: si effettua una previsione in base ai dati elaborati fino ad ora per lo sviluppo del software rimanente e del successivo inserimento nel mercato.
 \end{itemize}
 
+\newpage
 \subsubsection{Distribuzione delle risorse}
-Alcuni compiti saranno svolti dal membro del gruppo che ricopre il ruolo corrispondente, ad esempio il compito \virgolette{Raccolta dati sicurezza} sarà svolto dal membro del gruppo che ricopre la figura di \virgolette{Esperto sicurezza}, altri saranno svolti da più membri contemporaneamente, come ad esempio \virgolette{Progettazione Business Model}, ma vediamo in dettaglio la distribuzione delle risorse del team rispetto le fasi operative:
-
-\vspace*{0.5cm}
+Alcuni compiti saranno svolti dal membro del gruppo che ricopre il ruolo corrispondente, ad esempio il compito \virgolette{Raccolta dati sicurezza} sarà svolto dal membro del gruppo che ricopre la figura di \virgolette{Esperto sicurezza}, altri saranno svolti da più membri contemporaneamente, come ad esempio \virgolette{Progettazione Business Model}, ma vediamo in dettaglio la distribuzione delle risorse del team rispetto le fasi operative: \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.55]{images/risorse.png}
+\includegraphics[scale=0.65]{images/risorse.png}
 \caption{Distribuzione risorse}
 \end{figure}
 
 \vspace*{0.5cm}
 
 Nella figura virgolette{Distribuzione risorse} si può vedere come le varie figure partecipanti al lavoro siano impegnate temporalmente su tutto il periodo di attività.
+
+\subsubsection{Pianificazione oraria e dei costi}
+
+\begin{longtable}{ | p{6cm} | p{4.4cm} |}
+\caption{Compenso orario delle figure professionali}\\
+\hline
+\endfirsthead
+\multicolumn{2}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{2}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Figura professionale} \ & \textbf{CMO}\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo progetto & \EUR \ 40 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto sicurezza & \EUR \ 28 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto infrastrutture informatiche & \EUR \ 25 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo programmatore & \EUR \ 30 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto gamification & \EUR \ 25 \\
+\hline
+\end{longtable}
+
+\newpage
+
+\begin{longtable}{ | p{6cm} | p{3.5cm} | p{4cm} |}
+\caption{Preventivo costi totali per ogni figura professionale}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Figura professionale} \ & \textbf{Ore preventivate} \ & \textbf{Costi preventivati} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo progetto & 96 (32 giorni) & \EUR \ 3840\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto sicurezza & 130 (26 giorni)& \EUR \ 3640 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto infrastrutture informatiche & 75 (15 giorni) & \EUR \ 1875 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo programmatore & 90 (15 giorni) & \EUR \ 2700 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto gamification & 104 (16 giorni) &  \EUR \ 2600 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+\textbf{Totale} & \textbf{495 (9 settimane)} & \textbf{\EUR \ 14655} \\
+\hline
+\end{longtable}
+
+
+\begin{longtable}{ | p{6cm} | p{4.4cm} |}
+\caption{Preventivo costi per fase di progetto}\\
+\hline
+\endfirsthead
+\multicolumn{2}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{2}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Fase di progetto} \ & \textbf{Costi preventivati}\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Analisi e pianificazione iniziale & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Analisi di mercato & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Studio di fattibilità & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Progettazione business model & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Stima rischi/Stima costi \red{??} & \red{???} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+\textbf{Totale} & \textbf{\red{???}} \\
+\hline
+\end{longtable}
+
 
 \end{document}
