@@ -69,7 +69,7 @@
 
 
 
-\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{book}
 
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
@@ -238,15 +238,15 @@ Questo documento contiene la struttura del sistema Woty, analizzando nel dettagl
 % INTRODUZIONE ( 1° CAPITOLO ) QUESTO CAPITOLO VA MESSO IN OGNI DOCUMENTO!!!!!!!!
 
 \newpage
-\section{Analisi di mercato}
+\chapter{Analisi di mercato}
 
 
 %\subsection{Infortuni sul lavoro: statistiche}
-\ \ \
-\subsection{Bilanci infortunistici 2011}
 
-\ \
-\subsubsection{Visione genarale}
+\section{Bilanci infortunistici 2011}
+Di seguito verranno riportati alcuni valori sugli infortuni sul lavoro registrati nell'ultimo decennio e in particolare verranno analizzati più dettagliatamente i valori registrati nel 2011.
+
+\subsection{Visione genarale}
 
 \url{http://www.jobtel.it/incidenti-sul-lavoro}\\
 
@@ -279,7 +279,7 @@ Tra le 21.201 aziende controllate dall'Inail nel 2011, ben l’85,59\% è risult
 **business intelligence: un insieme di processi aziendali per raccogliere ed analizzare informazioni strategiche.\\\\
 
 \ \
-\subsubsection{Statistiche nel dettaglio}
+\subsection{Statistiche nel dettaglio}
 
 \textbf{Infortuni per modalità di evento}\\
 Per procedere in un’analisi dettagliata dei valori sugli infortuni sul lavoro, vanno prima di tutto distinte le modalità in cui avviene l’infortunio:
@@ -384,9 +384,9 @@ Analizzando i dati per fascia di età, è facile notare che la fascia tra i 35-4
 
 
 \ \ \
-\subsection{Bilanci infortunistici ultimo decennio 2002-2011}
+\section{Bilanci infortunistici ultimo decennio 2002-2011}
 \ \
-\subsubsection{Visione genarale}
+\subsection{Visione genarale}
 
 Ampliando l'osservazione dei dati sugli infortuni sul lavoro all'ultimo decennio, si può notare come il calo registrato nel 2011, rientri in un andamento decrescente delle denunce di infortunio:
 \begin{itemize}
@@ -397,7 +397,7 @@ Ampliando l'osservazione dei dati sugli infortuni sul lavoro all'ultimo decennio
 
 
 \ \
-\subsubsection{Statistiche nel dettaglio}
+\subsection{Statistiche nel dettaglio}
 
 \textbf{Infortuni per attività}\\
 Scomponendo il fenomeno secondo i tre grandi rami di attività previsti dalla classifica-
@@ -555,13 +555,13 @@ Di seguito viene riportato un rapporto sul numero degli infrotuni indennizzati n
 
 
 \ \ \
-\subsection{Osservazioni sui bilanci}
+\section{Osservazioni sui bilanci}
 Dai bilanci Inail sugli infortuni sul lavoro riportati nelle sezioni precedenti, è possibile effettuare un'attenta lettura nel dettaglio, così da ricavare delle importanti osservazioni utili per capire come meglio sviluppare e incentrare il progetto Woty.\\
 In primo luogo infatti è possibile comprendere quali siano i settori lavorativi più a rischio infortuni sul lavoro, nei quali il software Woty potrebbe avere una maggiore e più facile diffusione; e in secondo luogo è possibile comprendere quali siano le fasce di popolazione più a rischio infortuni, distinte per età, sesso e nazionalità.\\
 E' molto importante infatti adempiere ad uno sviluppo \virgolette{mirato}, in particolar modo nella prima fase di sviluppo e di distribuzione del software, così da poter minimizarre i fattori di rischio iniziali.\\
 
 
-\subsubsection{Woty: quali settori e attività lavorativi?}
+\subsection{Woty: quali settori e attività lavorativi?}
 Dai dati Inail relativi agli infortuni sul lavoro nell'ultimo decennio, si evince che la graduatoria dei settori lavorativi per il maggior numero di infortuni, vede al primo posto il settore dei \textbf{Servizi} che dal 2002 registra ogni anno più di 400.000 casi ( 450.000 casi nel 2002 - 416.000 casi nel 2011).\\
 Al secondo posto troviamo il settore dell' \textbf{Industria} che registra una media di 350.000 casi nell'ultimo decennio. Gli infortuni in questo settore sono però in costante dimunizione e sono passati dai 460.000 casi nel 2002 ai 260.000 casi nel 2011.\\
 Al terzo posto si classifica il settore dell' \textbf{Agricoltura} con una media di 50.000 casi all'anno. Anche in questo settore il numero è in lieve ma continua diminuzione registrando una variazione di circa 20.000 casi nell'ultimo decennio: 73.000 casi nel 2002 e 46.000 casi nel 2011.\\
@@ -577,7 +577,7 @@ Tra le attività individuate come più adatte per l'utilizzo del software Woty, 
 
 
 
-\subsubsection{Woty: quali età nei lavoratori?}
+\subsection{Woty: quali età nei lavoratori?}
 Osservando i dati relativi agli infortuni sul lavoro 2011, in relazione alle età dei lavoratori interessati, è possibile notare come ad essere più colpiti siano gli occupati con età comprese tra i 35 e 49 anni con ben 340.000 casi registrati nell'anno 2011.
 Al secondo posto troviamo invece gli occupati con età inferionre ai 34 anni con ben 250.000 casi registrati nell'anno 2011.\\
 Questi dati risultano essere favorevoli per la diffusione e un buon utilizzo del sistema Woty, in quanto essendo questa piattaforma molto innovativa e tecnologica, è più facilmente utilizzabile da parte di lavoratori appartenenti alla fascia d'età più giovane.\\
@@ -585,14 +585,14 @@ E' facilmente intuibile infatti che un occupato di età giovanile sia più indic
 
 
 
-\subsubsection{Woty: lavoratori stranieri?}
+\subsection{Woty: lavoratori stranieri?}
 Dai valori Inail sulla percentuale di lavoratori stranieri nel 2011, è emerso che ammontano a circa 3 milioni i lavoratori di nazionalità straniera presenti nel nostro, e sempre nel 2011 si sono registrati circa 115.000 casi di infortuni sul lavoro da parte di questi lavoratori, cioè il 15\% degli infortuni complessivi.\\
 I valori risultano essere sufficientemente alti da far si che questa fascia di lavoratori debba essere presa in considerazione in ambito di sviluppo e diffusione della piattaforma Woty.\\
 Deve essere presa in considerazione quindi l'utilizzo di Woty anche da parte di lavoratori stranieri e quindi il software dovrà supportare degli adeguati multilingua per permetterne un utilizzo più esteso, questo in previsione anche di una diffusione del software su scala internazionale.
 
 
 
-\subsubsection{Woty: certificazioni?}
+\subsection{Woty: certificazioni?}
 \red{todo ask zia}\\
 
 
@@ -626,22 +626,6 @@ In seguito a questo potrebbe essere valutata la richiesta di eventuali incentivi
 
 \newpage
 
-\section{Concorrenza}
-
-umba, a questo indirizzo\\\\
-\url{http://www.inail.it/Portale/appmanager/portale/desktop?_nfpb=true&_pageLabel=PAGE_SALASTAMPA&nextPage=Prodotti/Dossier_e_Speciali/SPECIALE_RAPPORTO_ANNUALE_2011/index.jsp}\\\\
-trovi  vari link a documenti inail sugli infortuni sul lavoro, tra cui ank questo\\\\
-\url{www.inail.it/repository/ContentManagement/node/P1553662568/parte\%20TERZA\%20ricerca.pdf}\\\\
-che parla di prevenzione e progetti k stanno facenso per prevenire, ti potrebbe servire per la concorrenza\\
-
-e ank questo sito che fa formazione sulla prevenzione\\
-\url{http://www.anfos.it/anfosv10a/default.asp?page=IT100&sec=Benvenuti+in+Anfos&gclid=CJmp5bKUprICFcYj3godVxoASQ}\\
-
-
-
-\subsection{concorrenza nella formazione dei lavoratori on line}
-\subsection{concorrenza nella formazione di agenti per istruire i lavoratori sulla prevenzione}
-\subsection{concorrenza con corsi per la formazione dei lavoratori}
 
 
 \end{document}
