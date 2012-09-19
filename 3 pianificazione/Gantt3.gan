@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Gantt" company="Sevenfold" webLink="" view-date="2012-07-09" view-index="0" gantt-divider-location="261" resource-divider-location="254" version="2.0">
+<project name="Gantt" company="Sevenfold" webLink="" view-date="2012-07-02" view-index="1" gantt-divider-location="252" resource-divider-location="276" version="2.0">
     <description/>
     <view zooming-state="default:6" id="gantt-chart"/>
     <view id="resource-table">
@@ -114,7 +114,7 @@
         <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="254" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="245" visible="true"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>
