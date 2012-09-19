@@ -257,7 +257,7 @@ Questo documento contiene i risultati dell' analisi del possibile business model
 %####################################################
 \chapter{Descrizione del Prodotto}
 
-Descriveremo ora le funzionalità pratiche del sistema, dagli attori coinvolti ai vari ambiti di utilizzo, al fine di rendere chiaro a un soggetto esterno l'effettiva utilità del prodotto.
+Di seguito  viene presentato il sistema Woty, descrivendo le funzionalità pratiche del sistema, dagli attori coinvolti ai vari ambiti di utilizzo, al fine di rendere chiaro a un soggetto esterno l'effettiva utilità del prodotto.
 
 
 
@@ -274,7 +274,7 @@ Il sistema software Woty può essere adottato da qualsiasi realtà lavorativa do
 I clienti che decidono di usare Woty offrono ai loro impiegati la possibilità di sostituire un eventuale corso frontale sulla sicurezza con l'utilizzo del nostro sistema.\\
 In ambito aziendale la formazione del personale riguardo conoscenze critiche, come può essere ad esempio la gestione delle norme sulla sicurezza sul lavoro, è normalmente erogata secondo procedure statiche scollegate dall'ambiente lavorativo come l'insegnamento in aula, che poco motivano e stimolano all'apprendimento i partecipanti.\\
 Un apprendimento diverso, di forma continua e interattiva, può essere erogato ai lavoratori come parte integrante delle attività lavorative standard, per fare in modo che il coinvolgimento dell'utente sia elevato, grazie a compiti e sfide a cui verrà sottoposto.\\
-Un aumento dell'interesse e della partecipazione del lavoratore può essere creato attraverso elementi di gamification ,con i quali verrà innestata una forma di competizione tra le diverse squadre di lavoro, oltre che nel singolo.
+Un aumento dell'interesse e della partecipazione del lavoratore può essere creato attraverso elementi di gamification, con i quali verrà innestata una forma di competizione tra le diverse squadre di lavoro, oltre che nel singolo.
 
 \section{Funzionalità del prodotto}
 
@@ -300,7 +300,7 @@ Viene designato un Super-user presso il cliente che tramite un'interfaccia web a
 A questo punto la normale amministrazione del sistema è in mano al Super-user, che non dovrebbe avere bisogno del fornitore a meno di guasti.
 
 \subsection{Server}
-Il software va installato, inizializzato e testato presso i server scelti dal fornitore del servizio.\\
+Il software va installato, inizializzato e testato presso gli appositi server interni.\\
 L'uso è ridotto alla gestione amministrativa tramite interfaccia web, che deve poter essere portata a termine anche da personale qualificato ma non necessariamente tecnico.
 
 \newpage
@@ -317,6 +317,7 @@ Da questo punto per l'utente può cominciare la partecipazione attiva.\\
 \includegraphics[scale=0.5]{images/cap1/statItaly} 
 \end{figure}
 
+\newpage
 Inoltre, l'interfaccia web sarà sviluppata tale da rimanere inalterata se visualizzata con diversi browser, anche con differenti versioni.\\
 Riportiamo di seguito le statistiche percentuali sull'utilizzo dei browser aggiornate a giugno 2012.
 
@@ -331,7 +332,7 @@ Riportiamo di seguito le statistiche percentuali sull'utilizzo dei browser aggio
 Per ogni dispositivo è disponibile un client distribuito a seconda della piattaforma in uso.\\
 Dopo la canonica inizializzazione e assegnazione di un account da parte del Super-user, lo User può direttamente autenticarsi e cominciare a operare tramite l'interfaccia dell'applicazione.\\ 
 Un Mobile-user ha inoltre la facoltà di agire esattamente come un Desktop-user tramite l'interfaccia web.\\
-Dopo un'attenta valutazione e in base ai criteri di seguito esposti, abbiamo deciso di sviluppare l'applicazione solo su dispositivi Android, data la limitazione derivante dalle risorse concesse.\\
+Dopo un'attenta valutazione e in base ai criteri di seguito esposti, abbiamo deciso di sviluppare inizialmente l'applicazione solo su dispositivi Android.\\
 Nulla vieta, in futuro, di poter sviluppare l'applicazione anche per diversi sistemi.
 
 \begin{figure}[H]
@@ -356,7 +357,7 @@ Gli attori chiamati in causa si suddivideranno nelle seguenti categorie:
 \begin{enumerate}
 
 \item \textbf{Woty Administrator}\\
-L'attività assegnata al Woty Administrator è quella di illustrare il funzionamento del software presso il cliente ed eventualmente aiutare ad installare le applicazioni mobile.\\
+L'attività assegnata al Woty Administrator è quella di illustrare il funzionamento del software.\\
 E' incaricato dell'inserimento delle quest. Conoscenze pratiche richieste: gestione di sistemi e reti informatiche.
 
 \item \textbf{Desktop-user}, a loro volta divisi in:
@@ -385,7 +386,7 @@ Il Super-user sarà colui che all'interno dell'azienda dovrà occuparsi di visio
 \section{Descrizione quest}
 
 Le tipologie di quest che un User può sostenere sono varie, caratterizzate da un input che Woty darà all'utente e da una risposta che l'utente darà al sistema, in base alle richieste.\\
-SevenFold si riserva di ampliare e/o modificare le tipologie di quest offerte durante lo sviluppo di Woty, a seguito di decisioni prese in sinergia con la ditta proponente.
+SevenFold si riserva di ampliare e/o modificare le tipologie di quest offerte durante lo sviluppo di Woty.
 
 \subsection{Caratterizzazione in base all'input Woty -> User}
 \begin{itemize}
@@ -422,6 +423,9 @@ SevenFold si riserva di ampliare e/o modificare le tipologie di quest offerte du
 %   cap Pretto
 %####################################################
 \chapter{Dettagli tecnici}
+
+
+In questo capitolo viene descritta la parte tecnica del softaware e implementazioni progettistiche architetturali. 
 
 \section{Woty - Scelte architetturali}
 In questa sezione verranno discusse le principali scelte architetturali che hanno portato alla realizzazione di Woty. 
@@ -514,7 +518,7 @@ Ruby on Rails, di seguito RoR, è un framework opensource relativamente giovane 
 IL DBMS utilizzato è MySql. Le caratteristiche del framework RoR, tuttavia, permettono di portare l'applicazione su svariati altri DBMS con il minimo sforzo, essendo RoR \emph{DBMS-agnostic} e le modifiche alla struttura del DB basate su migrazioni (oggetti logici, senza nessun tipo di sintassi SQL che potrebbe essere non supportata in tutti i DBMS).
 
 \subsection{Client Desktop}
-Il client desktop (un piccolo tool di che permette la notifica di quest assegnate all'utente e l'accesso rapido alla web application di Woty) è stato realizzato in C++ mediante il framework Qt.\\
+Il client desktop (un piccolo tool che permette la notifica di quest assegnate all'utente e l'accesso rapido alla web application di Woty) è stato realizzato in C++ mediante il framework Qt.\\
 Questa scelta è dovuta al fatto che si è voluto garantire la massima compatibilità con i diversi sistemi operativi (il client funziona correttamente su Windows, Linux e OsX). Lo stesso risultato si sarebbe potuto ottenere con Java, ma l'overhead prestazionale della JVM è stato valutato negativo, soprattutto considerando che il client si carica all'avvio dell'OS e resta residente nella toolbar fino alla chiusura. 
 
 \subsection{Client Android}
@@ -535,7 +539,7 @@ In figura \ref{StrutturaGeneraleSistema} viene riportata l'architettura generale
 
 
 \subsection{Sottosistema Server: Webservice}
-Il sottosistema server è responsabile della gestione di tutte le risorse di PMAC. Si occupa di interagire con i client, della conservazione e elaborazione dei dati. L'interazione con i web client è permessa attraverso la visualizzazione di pagine HTML, coadiuvate da fogli di stile CSS e di linguaggio lato client Javascript. L'interazione con i client mobile e i tool di notifica desktop è realizzata attraverso comunicazione di messaggi XML e JSON.
+Il sottosistema server è responsabile della gestione di tutte le risorse di Woty. Si occupa di interagire con i client, della conservazione e elaborazione dei dati. L'interazione con i web client è permessa attraverso la visualizzazione di pagine HTML, coadiuvate da fogli di stile CSS e di linguaggio lato client Javascript. L'interazione con i client mobile e i tool di notifica desktop è realizzata attraverso comunicazione di messaggi XML e JSON.
 
 % inserire una figura
 \begin{figure}[H]
@@ -550,7 +554,7 @@ Nel presente documento è presente anche una descrizione più in dettaglio dell'
 \subsection{Sottosistema Desktop: Tool di notifica}
 
 Il sottosistema Desktop si occupa di gestire la ricezione delle notifiche lato desktop per un utente del tipo Desktop-user, e consiste in una applicazione di tipo Tray Icon semplice ed intuitiva.\\
-Una volta installata l'applicazione nell'apposito computer, il Desktop-user potrà effettuare il login al server PMAC attraverso le proprie credenziali. In questo modo l'applicazione potrà controllare periodicamente la presenza di nuove quest da svolgere assegnate allo specifico utente, o in caso contrario, l'utente potrà richiederne di nuove.\\
+Una volta installata l'applicazione nell'apposito computer, il Desktop-user potrà effettuare il login al server Woty attraverso le proprie credenziali. In questo modo l'applicazione potrà controllare periodicamente la presenza di nuove quest da svolgere assegnate allo specifico utente, o in caso contrario, l'utente potrà richiederne di nuove.\\
 Il sottosistema sarà implementato con l'utilizzo del linguaggio di programmazione object oriented C++, e il framework Qt correlato.\\
 Tale sottosistema è stato suddiviso in tre componenti logici come illustrato nella figura \ref{Sottosistema Desktop}.
 
@@ -566,7 +570,7 @@ Tale sottosistema è stato suddiviso in tre componenti logici come illustrato ne
 
 
 \subsection{Sottosistema Mobile: Mobile client}
-Il sottosistema mobile prevede lo sviluppo di un applicazione dedicata per il sistema operativo Android che offra all'utente un esperienza di navigazione alla pari, o più simile possibile, a quella offerta da una postazione fissa.\\
+Il sottosistema mobile prevede lo sviluppo di un applicazione dedicata per il sistema operativo Android che offra all'utente un' esperienza di navigazione alla pari, o più simile possibile, a quella offerta da una postazione fissa.\\
 Questo sottosistema prevede l'interazione con il server per il recupero di tutte le informazioni necessarie e offre un servizio di notifiche push per la segnalazione della presenza di nuove Quest disponibili all'utente autenticato dal dispositivo mobile.\\
 Per lo sviluppo architetturale abbiamo scelto di seguire il design pattern MVP, per una massima separazione ed estendibilità del codice.\\
 Sono quindi stati previsti i seguenti componenti principali:
@@ -681,11 +685,11 @@ Verrà di seguito riportata una descrizione delle risorse di Woty, in modo da po
 \subsubsection{MobileUser} Utente Mobile
 \subsubsection{Admin} Amministratore di Woty
 \subsubsection{Customer} Risorsa che modella i clienti del fornitore del servizio. Ogni customer ha vari workgroup che a loro volta contengono una serie di user. Ogni customer inoltre sottoscrive un plan, che definisce il livello di servizio per il customer.\\
-I costi quindi, sono calcolati tra questa classe e la classe Plan. Nel sistema è un'entità molto importante in quanto tutti gli utenti fruiscono dei contenuti all'interno del loro customer.\\
+Nel sistema è un'entità molto importante in quanto tutti gli utenti fruiscono dei contenuti all'interno del loro customer.\\
 \subsubsection{WorkGroup} Classe che rappresenta un reparto di un'azienda cliente, che sono composti dagli utenti facenti parte dello stesso.\\
 Gli utenti in reparti lavorano anche in team, e sono disponibili classifiche di reparto. Sono inoltre utilizzati per l'assegnazione delle quest, in quanto il reparto è una delle caratteristiche per le quali sono influenzate le categorie di rischio.
 \subsubsection{Plan}Risorsa che modella le formule d'acquisto del prodotto. Il paradigma Software as a Service uniforma nel miglior modo possibile il maggior numero di clienti.\\
-Per il nostro caso possono essere sottoscritti vari piani di acquisto e nel caso in cui il cliente necessiti di caratteristiche personali è possibile assegnare dei plan privati.\\
+Per il nostro caso possono essere sottoscritti vari piani di acquisto.\\
 All'interno del plan sono definite alcune abilità che possono o meno essere utilizzate a seconda del prezzo pagato.
 \subsubsection{Quest} La classe modella le quest e la loro composizione. Di fatto le quest sono composte di una descrizione e una sfida: entrambe possono essere di vario tipo e sono rappresentate tramite gerarchie.
 Le quest inoltre hanno una categoria che può essere inclusa in un workgroup: gli utenti facenti parte sono in grado di svolgere le quest con le categorie associate.
