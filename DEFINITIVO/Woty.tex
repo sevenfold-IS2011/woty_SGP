@@ -716,6 +716,45 @@ quando uno User svolge una Quest oppure quando il sistema assegna ad uno User un
 \subsubsection{QuestCategory}Identifica una categoria di rischio al quale una SharedQuest è associata
 \subsubsection{SharedQuest}Rappresenta una Quest condivisa tra più Workgroup
 
+\section{Hosting}
+In questa sezione verranno analizzate le possibilità di hosting su cui ospitare Woty
+\subsection{Hosting Aziendale}
+La prima possibilità è quella di ospitare Woty direttamente sul server aziendale, usando come sistema operativo Ubuntu Server e DBMS MySql.
+\\
+\begin{itemize}
+\item Pro:
+\begin{itemize}
+\item Completo controllo sul Woty hoster.
+\item Nessun costo relativo a licenze o canoni di hosting.
+\end{itemize}
+\item Contro:
+\begin{itemize}
+\item Necessità di adeguamento della connessione, con alti costi derivanti dalla necessità di connettività sufficiente a supportare il carico nei momenti di picco.
+\item Solo un membro del team ha conoscenze adeguate al ruolo di sistemista linux.
+\end{itemize}
+\end{itemize}
+
+\subsection{Heroku}
+Heroku (www.heroku.com) è una innovativa soluzione di cloud hosting, con supporto nativo ad applicazioni Ruby on Rails.
+\begin{itemize}
+\item Pro:
+\begin{itemize}
+\item Elevata scalabilità: è possibile aumentare dinamicamente il numero di web dynos (thread utilizzabili dall'applicazione epr produrre risposte a chiamate REST) e di worker dynos (thread in background disponibili all'applicazione) in modo da ""consumare"" solo le risorse necessarie a rispondere alle esigenze dell'applicazione in un dato momento.
+\item Deploy immediato: grazie all'interfaccia nativa di Heroku ad applicazioni Ruby on Rails, è possibile effettuare il deploy di un'applicazione (e dei suoi succesivi aggiornamenti) in maniera immediata, semplicemente effettuando un \emph{push} al repository Git fornito da Heroku. 
+\item Affidabilità: l'infrastruttura server di Heroku garnatisce un uptime del 99.5\% e ridondanza dei dati in location geograficamente separate, in modo da prevenire qualsiasi rischio di calamità naturale. 
+\item Indipendenza dall'infrastruttura: Heroku permette di delegare completamente il lavoro di sistemista server, in modo da poter concentrare le energie del team sul perfezionamento di Woty.
+\end{itemize}
+\item Contro:
+\begin{itemize}
+\item Scalabilità delle prestazioni, scalabilità del costo: I costi di Heroku sono dipendenti dalle effettive risorse consumate: è necessario monitorare l'andamento delle richieste in modo da non arrivare a costi eccessivamente elevati.
+\item DBMS: il database scelto da Heroku è Postgres SQL, senza possibilità di modifica. Questo potrebbe essere un problema nel momento in cui venissero definite operazioni su DB non DB-agnostic. In ogni caso questo non dovrebbe essere un problema, in quanto nello sviluppo di Woty non sono state utilizzate chiamate a DB specifiche per il DBMS in uso (MySql).
+\end{itemize}
+\end{itemize}
+
+\subsection{Hosting scelto}
+Alla luce delle considerazioni sopra esposte, è stato deciso di utlizzare Heroku come hosting, mantenendo comunque monitorati i suoi costi.
+
+
 
 
 
