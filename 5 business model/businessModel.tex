@@ -420,7 +420,8 @@ Non dimentichiamo che comunque siamo un team di sviluppo software e che quindi u
 Sono i partner dei quali ci avvaliamo per ottenere vantaggi sia economici che legati all'out\-sourcing. Vediamoli in dettaglio:
 \begin{itemize}
 \item \textbf{Pubblicità}: la pubblicità sarà in parte affidata e gestita da partner esterni, cosa più economica e conveniente che formare del personale interno.
-\item \textbf{Infrastruttura hardware}: la piattaforma hardware sarà fornita e custodita da società terze specializzate in questo tipo di business.	
+\item \textbf{Infrastruttura hardware}: la piattaforma hardware sarà fornita e custodita da società terze specializzate in questo tipo di business.
+\item \textbf{Sistemi di pagamento digitale}: Il pagamento delle sottoscrizioni dei clienti avviene in maniera automatica tramite i carta di credito, paypal. 	
 \item \textbf{Altre alleanze}, sia di tipo strategico che per riduzione dei rischi non sono state programmate per adesso, principalmente per il poco sviluppo del mercato in questo ambito. Non escludiamo partnership con altre società per rafforzare il nostro business in futuro.
 \end{itemize}
 
@@ -428,7 +429,8 @@ Sono i partner dei quali ci avvaliamo per ottenere vantaggi sia economici che le
 È l'insieme delle spese che la nostra attività comporta, sia legate alle infrastrutture che al marketing che alla ricerca e sviluppo. Più è bassa in relazione alle entrate maggiore sarà il reddito della società, quindi si cerca di minimizzare le spese, spinti da un economia di costo più che da una da valore.
 \begin{itemize}
 \item \textbf{Costi fissi}: i costi fissi previsti per offrire il servizio al cliente sono principalmente quelli legati alla struttura fisica che mantiene attivo il servizio, quelli per il supporto post vendita e gli stipendi di tutti i membri del gruppo.
-\item \textbf{Costi variabili}: sono quelli legati alla parte di pubblicità, alle inserzioni e quelli legati alle partnership che eseguono lavori su commissione.
+\item \textbf{Costi variabili}: sono quelli legati alla parte di pubblicità, alle inserzioni e quelli legati alle partnership che eseguono lavori su commissione. Esistono inoltre costi variabili legati al numero di utenti dell'applicazione. E' infatti previsto un sistema di autoscaling che aumenta e diminuisce il numero di macchine adibite all'erogazione del servizio a seconda del carico corrente. Le macchine ovviamente hanno anche un costo legato all'utenza.
+
 \end{itemize}
 
 Seguiamo un economia di scala in quanto più clienti riusciamo a soddisfare con la nostra infrastruttura e meno ci costerà mantenerla in proporzione ai ricavi. 
@@ -451,7 +453,7 @@ A seguito dell'analisi di mercato, dell'analisi sulla concorrenza e dello studio
 Verrà pertanto riportato in seguito un elenco descrittivo di tali modifiche con l'aggiunta anche delle evenutali estensibilità del sistema, in previsione di modifiche future o adattamenti in fase di manutenzione del software dovuti o a cambiamenti dei requisiti o al riscontro di malfunzionamenti.
 
 \begin{itemize}
-\item il sistema già progettato per il supporto al multi lingua, ora dispone solamente delle lingue italiano ed inglese. In seguido allo studio nell'analisi di mercato, si è osservato che i lavoratori stranieri presenti in Italia sono una percentuale non ininfluente. Andranno pertanto aggiunte le traduzioni adeguate per le prinicipali nazionalità dei lavoratori stranienieri;
+\item il sistema già progettato per il supporto al multi lingua, ora dispone solamente delle lingue italiano ed inglese. In seguito allo studio nell'analisi di mercato, si è osservato che i lavoratori stranieri presenti in Italia sono una percentuale non ininfluente. Andranno pertanto aggiunte le traduzioni adeguate per le prinicipali nazionalità dei lavoratori stranieri;
 \underline{tempistiche}: un mese per programmatore e un esperto di lingue;\\
 \underline{costo stimato}: 2000\EUR.
 
@@ -460,6 +462,10 @@ Verrà pertanto riportato in seguito un elenco descrittivo di tali modifiche con
 Si potrà così ampliare la gamma dei dispositivi supportati aumentando l'usabilità della piattaforma;\\
 \underline{tempistiche}: un mese per due programmatori;\\
 \underline{costo stimato}: 4000\EUR.
+
+\item l'applicazione entra nella vita lavorativa dei dipendenti delle aziende: è plausibile pensare che un amministratore abbia necessità di controllare l'uso che i dipendenti fanno del software. Si è ideato quindi lo sviluppo di un pannello adibito a pagamento che possa fornire il servizio entro i termini di legge.\\
+\underline{tempistiche}: 3 settimane per due programmatori;\\
+\underline{costo stimato}: 3000\EUR.
 
 
 \item dagli studi sulla concorrenza è emerso come l'uso della gamification per l'insegnamento della sicurezza sul lavoro sia un'innovazione; si prevede quindi di ampliare tale fattore permettendo al sistema la creazione e visualizzazione di nuovi badge;\\
