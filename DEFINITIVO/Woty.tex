@@ -292,7 +292,7 @@ Nell'ambiente aziendale, Woty permette agli User di portare a termine le quest d
 Gli User in mobilità denominati Mobile-user, tramite l'applicazione dedicata, si autenticano, svolgono le quest loro assegnate e visualizzano statistiche e punteggi esattamente come farebbero con la normale interfaccia desktop.
 
 \section{Ambiente di esecuzione}
-Il software è sviluppato sul modello client-server. I client si dividono in desktop e mobile. La parte server è ospitata unicamente presso le macchine interne.\\
+Il software è sviluppato sul modello client-server. I client si dividono in desktop e mobile. La parte server è ospitata unicamente presso il servizio di cloud computing scelto dall'azienda (si veda il capitolo \ref{hosting} \virgolette{Hosting}).\\
 L'inserimento di un nuovo cliente comporta un intervento sull'interfaccia web da parte del Woty Administrator, che fissa inoltre il numero di account istanziabili dal nuovo cliente.\\
 Viene designato un Super-user presso il cliente che tramite un'interfaccia web avrà le responsabilità di:
 \begin{itemize}
@@ -302,9 +302,6 @@ Viene designato un Super-user presso il cliente che tramite un'interfaccia web a
 
 A questo punto la normale amministrazione del sistema è in mano al Super-user, che non dovrebbe avere bisogno del fornitore a meno di guasti.
 
-\subsection{Server}
-Il software va installato, inizializzato e testato presso gli appositi server interni.\\
-L'uso è ridotto alla gestione amministrativa tramite interfaccia web, che deve poter essere portata a termine anche da personale qualificato ma non necessariamente tecnico.
 
 \newpage
 
@@ -719,6 +716,8 @@ quando uno User svolge una Quest oppure quando il sistema assegna ad uno User un
 \subsubsection{SharedQuest}Rappresenta una Quest condivisa tra più Workgroup
 
 \section{Hosting}
+\label{hosting}
+
 In questa sezione verranno analizzate le possibilità di hosting su cui ospitare Woty
 \subsection{Hosting Aziendale}
 La prima possibilità è quella di ospitare Woty direttamente sul server aziendale, usando come sistema operativo Ubuntu Server e DBMS MySql.
@@ -1933,23 +1932,28 @@ Di seguito si riportano costi e guadagni previsti dal business model.
 \subsubsection{Costi fissi}
 
 \begin{itemize}
-	\item \textbf{Cloud computing Heroku:} \red{C'MON FUCKERS! C'MON!}
 	\item \textbf{Corso aggiornamento formatori di sicurezza:} \EUR \ 250.
 \end{itemize}
 
 \subsubsection{Costi variabili}
 
+Vengono listate le stime dei costi del servizio di cloud computing Heroku calcolate secondo la fascia di utenza minima di un'azienda (ditta fino a 20 persone):
+
 \begin{itemize}
-	\item \textbf{Cache Heroku scalabile:} \red{C'MON FUCKERS! C'MON!}
+	\item \textbf{Costi Infrastruttura Heroku:}
+	\begin{itemize}
+		\item fino a \textbf{5} clienti: \EUR \ 34.
+		\item fino a \textbf{50}: \EUR \ 180. 
+		\item fino a \textbf{150}: \EUR \ 344.
+		\item fino a \textbf{300}: \EUR \ 650.
+	\end{itemize}
 \end{itemize}
+
+Con ulteriori maggiorazioni a seconda delle aziende che aderiranno al servizio e della loro fascia di utenze.
 
 \subsubsection{Utenti e guadagni previsti}
 
-\red{//TODO}
-
-\subsubsection{Analisi di Breakeven}
-
-\red{NON SO SE LA FARÒ}
+Essendo una start-up innovativa e non avendo quindi riscontri nel mercato corrente non si può stimare il numero di potenziali clienti ed è per questo che la commercializzazione del prodotto è ristretta inizialmente solo all'ambito nazionale.
 
 \section{Consuntivo finale del progetto}
 
