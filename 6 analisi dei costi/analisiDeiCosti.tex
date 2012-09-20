@@ -1,75 +1,4 @@
-% GUIDA VELOCE:
-% --------------------------------------------------------------------
-% X INIZIA UN UNOVO CAPITOLO:
-% \chapter{??? NOME CAPITOLO}}
-% \section{ ?? }
-% \subsection{ ?? }
-%
-% --------------------------------------------------------------------
-% PAROLA CONTENUTA NEL GLOSSARIO:
-% scrivere la parola seguita da $^g$
-% esempio: User$^g$
-%
-% --------------------------------------------------------------------
-% PER ANDARE A CAPO SENZA RIENTRO INSERIRE:
-% \\
-%
-% --------------------------------------------------------------------
-% GRASSETO:
-% \textbf{parola}
-%
-% --------------------------------------------------------------------
-% CORSIVO:
-% \emph{parola}
-% --------------------------------------------------------------------
-% PER SCRIVERE IN ROSSO:
-% \red{parola}
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE TRA VIRGOLETTE
-% ''parola''
-%
-% --------------------------------------------------------------------
-% PER EVITARE IL RIENTRO AUTOMATICO DI UN CAPOVERSO:
-% \noindent testo....
-%
-% --------------------------------------------------------------------
-
-% PER SCRIVERE CARATTERI PARTICOLARI COME: { } _ ecc.. SCRIVERLI PRECEDUTI DA \
-% ES: \{ \_
-%
-% --------------------------------------------------------------------
-% X INSERIRE UN LINK:
-% \url{http://www.math.unipd.it/~tullio/IS-1/2011/Progetto/C3.pdf}
-%
-% --------------------------------------------------------------------
-% PER COMMENTARE INTERE PARTI:
-% \comment{ comment }
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE NOTE DURANTE IL TESTO:
-% parola \footnote{ note riguardanti la parola }
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE CODICE SORGENTE:
-%
-% \lstset{language=c++,
-% stringstyle=\color{blue}\textrm,
-% commentstyle=\rmfamily, numbers= none}
-
-% \begin{lstlisting}
-% CODICE
-% \end{lstlisting}
-%
-% --------------------------------------------------------------------
-% !!!!!!!! PER COSE + COMPLESSE VEDI: !!!!!!!!!!!!!!!!!!!!!!!
-% !!!!!!!! PMAC/latex/GUIDA LATEX!!!.tex !!!!!!!!!!!!!!!!!!!!!!!
-
-% per tutto il resto chiedi a lory prima di fare/scrivere cazzate !!!!!!!!!!
-
-
-
-\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{book}
 
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
@@ -84,6 +13,7 @@
 % setta i bordi della pagina: dx e sx 3.2cm di rientro + nel lato di rilagatura rientra di altri 0mm
 \usepackage[a4paper,top=3cm,bottom=3cm,left=3.2cm,right=3.2cm, bindingoffset=0mm]{geometry}
 \usepackage{listings} % per inserire codice sorgente
+\usepackage{marvosym} % per scrivere il simbolo €
 \usepackage{float} % per gestire oggetti flottanti ( es immagini tabelle posizionebili con "H" che forza il posizionamento nel punto specifico )
 
 % serve per creare tabelle lunghe + di una pagina con \begin{longtable} (vd Tabelle.pdf pg11-12)
@@ -148,7 +78,7 @@
 
 % INSERIRE QUI IL NOME DEL DOCUMENTO SEGUITO DA UNO SPAZIO
 % ( così il nome si imposta in automatico nelle varie ricorrenze standard)
-\newcommand{\NomeDocumento}{Scrivi in questo documento k poi uniamo tutto }
+\newcommand{\NomeDocumento}{Scrivi in questo documento che poi uniamo tutto }
 
 % INSERIRE QUI LA DATA DEL RILASCIO DELLA VERSIONE ATTUALE
 \newcommand{\DataRilascio}{2012/04/02}
@@ -235,32 +165,218 @@ Questo documento contiene la struttura del sistema Woty, analizzando nel dettagl
 
 % --------------------------------------------------------------------
 
-% INTRODUZIONE ( 1° CAPITOLO ) QUESTO CAPITOLO VA MESSO IN OGNI DOCUMENTO!!!!!!!!
+% (CAP.6) ANALISI DEI COSTI
 
-\newpage
-\section{Introduzione}
+\chapter{Analisi dei costi}
 
+In questo capitolo vengono discussi i costi e i guadagni previsti dall'adozione del modello di business descritto precedentemente. Saranno inoltre riportati e discussi i tempi e i costi dedicati allo sviluppo di questo progetto.
 
-\subsection{Scopo del documento}
-Con il presente documento su vuole dare una definizione dettagliata dell'architettura del sistema Woty attraverso un approccio top-down. Di ogni sottosistema infatti verrà presentata dapprima la struttura dei componenti, poi verranno specificate le classi, ed infine di ogni classe si indicheranno metodi e campi dati.
+\section{Prospetto riassuntivo business model}
 
+\subsection{Consuntivo per la prima realizzazione del Software Woty}
 
+\red{LORY DIO£!\#?, PER ME STA ROBA NON CENTRA UN CA**O!}\\
+Di seguito viene proposto il consuntivo economico ed il riassunto della suddivisione dei ruoli effettuata dal gruppo durante il primo  sviluppo del prodotto software denominato \texttt{Woty}.\\
 
+I costi della fase di sviluppo del software sono stati calcolati in funzione dei costi orari riportati nella seguente tabella:
 
-\comment{
-CODICE X INCLUDERE UNA IMMAGINE
-(ricordati di mettere l'immagine nella cartella images!!)
+\begin{longtable}{|p{4cm} p{1cm}|p{3cm}|}
+\caption{Costi/Ora per ruolo}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
 
-\begin{figure}[H]
+\endlastfoot
+\textbf{Ruolo}& \textbf{}& \textbf{Costo/Ora in \EUR}\\
+\hline
+Responsabile	& (RE) & 30\\
+\hline
+Amministratore	& (AM) & 20\\
+\hline
+Analista	    & (AN) & 25\\
+\hline
+Progettista	    & (PT) & 22\\
+\hline
+Programmatore	& (PM) & 15\\
+\hline
+Verificatore	& (VR) & 15\\
+\hline
+\end{longtable}
+
+Di seguito si riportano i costi sostenuti per ogni ruoli impiegato nello sviluppo del progetto in forma tabellare.
+
+\begin{table}[H]
+\caption{Consuntivo costi totale}
+\label{costiTotaliConsuntivo}
 \centering
-\includegraphics[scale=0.2]{images/XXXX}
-\caption{Diagramma Gantt}
+\begin{tabular}{|p{3cm} | p{1cm}|p{1cm}| p{1cm}| p{1cm}| p{1cm}| p{1cm}| p{1cm}|}
+\hline
+\textbf{Ruolo}           & RE   &   AM  &   AN  &  PT  &  PM  &  VR  &  Totale      \\
+\hline
+\textbf{Consuntivo} 		& 900  &  1060 &  1750 & 3652 & 2295 & 3945 & \textbf{13602} \\
+\hline
+\end{tabular}
+\end{table}
+
+In figura \ref{costiTotPerRuoloCons} viene proposta la ripartizione dei costi totali per ruolo utilizzato nel progetto.
+
+% inserire una figura
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.25]{images/costiPerRuoloConsuntivo.png} % vedi Lateximpazienye pg67
+\caption{Costi totali per ruolo}
+\label{costiTotPerRuoloCons}
 \end{figure}
 
 
-}
+\newpage
+
+\subsection{Analisi dei costi del business model}
+
+Di seguito si riportano costi e guadagni previsti dal business model.
+
+\subsubsection{Costi iniziali}
+\begin{itemize}
+	\item \textbf{Primo sviluppo del software:} 13602 \EUR.
+	\item \textbf{Nuove funzionalità tecniche:} (se ci sono)
+	\item \textbf{Consulenza legale:} (se ci servirà)
+	\item \textbf{Campagna di marketing:} (...)
+\end{itemize}
 
 
+\subsubsection{Costi fissi}
 
+\begin{itemize}
+	\item \textbf{Manutenzione acquisto o la locazione del server:} (...)
+\end{itemize}
+
+\subsubsection{Costi variabili}
+
+\red{//TODO?}
+
+\subsubsection{Utenti e guadagni previsti}
+
+\red{//TODO}
+
+\subsubsection{Analisi di Breakeven}
+
+\red{NON SO SE LA FARÒ}
+
+\section{Consuntivo finale del progetto}
+
+Di seguito è riportato il riassunto del quantitativo orario che ogni risorsa ha dedicato al progetto, l'indicazione del costo medio orario (CMO) ed un prospetto indicante i costi totali sostenuti per il progetto.
+Questi dati sono stati calcolati nella fase finale del progetto e rappresentano il costo finale del lavoro svolto dalle varie figure professionali impegnate nel progetto.\\
+Il consuntivo deve essere confrontato con il preventivo realizzato nelle fasi preliminari per avere un migliore riscontro delle variazioni rispetto alla previsione iniziale.\\
+Viene ora riproposto il CMO delle varie figure professionali impegnate nel progetto:	
+
+\begin{longtable}{ | p{5cm} | p{3.4cm} |}
+\caption{Compenso orario delle figure professionali}\\
+\hline
+\endfirsthead
+\multicolumn{2}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{2}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Figura professionale} \ & \textbf{CMO}\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo progetto & \EUR \ 40 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto mercato & \EUR \ 25 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto marketing & \EUR \ 25 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Tecnico informatico & \EUR \ 30 \\
+\hline
+\end{longtable}
+
+Dopo aver osservato il compenso orario per ogni figura impegnata nel progetto viene visualizzato il costo totale dato dal lavoro di ognuna di esse.\\ Tra parentesi possiamo notare le variazioni effettuate dal preventivo stimato nella sezione \virgolette{Pianificazione}. \red{mettere un ref plz}
+
+\begin{longtable}{ | p{6cm} | p{3.5cm} | p{4cm} |}
+\caption{Consuntivo costi per ogni figura professionale}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Figura professionale} \ & \textbf{Ore consuntivate} \ & \textbf{Costi consuntivati} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo progetto & 95 (\textbf{-5}) & \EUR \ 3.800 (\textbf{-200})\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto mercato & 124 (\textbf{-4})& \EUR \ 3.100 (\textbf{-100})\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto marketing & 95 (\textbf{+5}) & \EUR \ 2.375 (\textbf{+125})\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Tecnico informatico & 102 (\textbf{+2}) & \EUR \ 3.060 (\textbf{+60})\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+\textbf{Totale} & \textbf{406} (\textbf{-2}) & \textbf{\EUR \ 12.335} (\textbf{-115})\\
+\hline
+\end{longtable}
+
+Si analizzano ora le variazioni alle ore e ai costi preventivati. In generale le ore impiegate hanno rispecchiato la pianificazione iniziale abbastanza fedelmente. Le variazioni sono state minime per ogni ruolo in particolare:
+
+\begin{itemize}
+	\item Il \textbf{capo progetto} e l'\textbf{esperto di mercato} hanno sostenuto un numero di ore leggermente inferiore a quelle previste in fase di pianificazione. Questo dovuto probabilmente ad una sovrastima iniziale per quanto riguarda il controllo del progetto e l'analisi della situazione della sicurezza nel lavoro nel mercato attuale.
+	\item L'\textbf{esperto in marketing} e il \textbf{tecnico informatico} hanno svolto un numero di ore leggermente maggiore rispetto al preventivo. Le ore in eccesso sono state svolte per contrastare una leggera sottostima nella pianificazione.\\ Sottostima rilevata soprattutto per quanto riguarda l'analisi dei concorrenti nell'ambito della sicurezza e gamification svolta nel marketing, e la descrizione tecnica del prodotto per quanto riguarda il lavoro del nostro tecnico informatico.
+\end{itemize}
+
+Date queste variazioni sono state svolte 2 ore in meno rispetto a quelle totali preventivate, fatto che ha portato ad una appena percettibile diminuzione dei costi totali.\\
+
+Si riassumono infine le variazioni nei costi dal punto di vista delle varie fasi svolte nello sviluppo del progetto nella tabella seguente.\\ Tra parentesi possiamo notare le variazioni effettuate dal preventivo stimato nella sezione \virgolette{Pianificazione}. \red{mettere un ref plz}
+
+
+\begin{longtable}{ | p{6cm} | p{4.4cm} |}
+\caption{Consuntivo costi per fase di progetto}\\
+\hline
+\endfirsthead
+\multicolumn{2}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{2}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Fase di progetto} \ & \textbf{Costi consuntivati}\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Pianificazione e Analisi prodotto & \EUR \ 1.150 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Analisi di mercato & \EUR \ 1.675 (\textbf{+75})\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Studio di fattibilità & \EUR \ 2.050 (\textbf{+110})\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Verifica progressi & \EUR \ 485\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Progettazione business model & \EUR \ 4.655 (\textbf{-195})\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Stime conclusive & \EUR \ 2.320 (\textbf{-105})\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+\textbf{Totale} & \textbf{\EUR \ 12.335} (\textbf{-115})\\
+\hline
+\end{longtable}
+
+Come si può notare le variazioni prima descritte hanno avuto ripercussioni minime nei costi del progetto nelle varie fasi. Vi è stato un leggero aumento dei costi nella fase in cui si è andato ad analizzare il mondo della sicurezza nel lavoro, che dato l'argomento è risultato molto vasto.\\
+Le diminuzioni dei costi negli altri ambiti del progetto sono da imputare principalmente alla sovrastima iniziale nelle ore previste per il capo progetto, che essendo la figura professionale con CMO più elevato comporta conseguenze maggiori nei costi rispetto agli altri ruoli.
 
 \end{document}

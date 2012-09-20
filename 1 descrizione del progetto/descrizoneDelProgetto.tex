@@ -1,74 +1,3 @@
-% GUIDA VELOCE:
-% --------------------------------------------------------------------
-% X INIZIA UN UNOVO CAPITOLO:
-% \chapter{??? NOME CAPITOLO}}
-% \section{ ?? }
-% \subsection{ ?? }
-%
-% --------------------------------------------------------------------
-% PAROLA CONTENUTA NEL GLOSSARIO:
-% scrivere la parola seguita da $^g$
-% esempio: User$^g$
-%
-% --------------------------------------------------------------------
-% PER ANDARE A CAPO SENZA RIENTRO INSERIRE:
-% \\
-%
-% --------------------------------------------------------------------
-% GRASSETO:
-% \textbf{parola}
-%
-% --------------------------------------------------------------------
-% CORSIVO:
-% \emph{parola}
-% --------------------------------------------------------------------
-% PER SCRIVERE IN ROSSO:
-% \red{parola}
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE TRA VIRGOLETTE
-% ''parola''
-%
-% --------------------------------------------------------------------
-% PER EVITARE IL RIENTRO AUTOMATICO DI UN CAPOVERSO:
-% \noindent testo....
-%
-% --------------------------------------------------------------------
-
-% PER SCRIVERE CARATTERI PARTICOLARI COME: { } _ ecc.. SCRIVERLI PRECEDUTI DA \
-% ES: \{ \_
-%
-% --------------------------------------------------------------------
-% X INSERIRE UN LINK:
-% \url{http://www.math.unipd.it/~tullio/IS-1/2011/Progetto/C3.pdf}
-%
-% --------------------------------------------------------------------
-% PER COMMENTARE INTERE PARTI:
-% \comment{ comment }
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE NOTE DURANTE IL TESTO:
-% parola \footnote{ note riguardanti la parola }
-%
-% --------------------------------------------------------------------
-% PER SCRIVERE CODICE SORGENTE:
-%
-% \lstset{language=c++,
-% stringstyle=\color{blue}\textrm,
-% commentstyle=\rmfamily, numbers= none}
-
-% \begin{lstlisting}
-% CODICE
-% \end{lstlisting}
-%
-% --------------------------------------------------------------------
-% !!!!!!!! PER COSE + COMPLESSE VEDI: !!!!!!!!!!!!!!!!!!!!!!!
-% !!!!!!!! PMAC/latex/GUIDA LATEX!!!.tex !!!!!!!!!!!!!!!!!!!!!!!
-
-% per tutto il resto chiedi a lory prima di fare/scrivere cazzate !!!!!!!!!!
-
-
-
 \documentclass[10pt,a4paper]{article}
 
 \usepackage[italian]{babel}
@@ -237,19 +166,14 @@
 % LORY LA MIA PARTE INIZIA DA QUA E PRIMA DI QUA CI DEVI METTERE IL SOMMARIO E LE ALTRE STRONZATE
 
 \newpage
-\section{Introduzione}
-
-
-\subsection{Scopo del documento}
-Il presente documento rappresenta un Business Plan per il sistema denominato \textbf{Woty},  sviluppato dal teamwork Sevenfold in corrispondenza del corso di Ingegneria del Software [2012].\\
-
-
-
 
 
 \section{Descrizione del Sistema}
 
 Descriveremo ora le funzionalità pratiche del sistema, dagli attori coinvolti ai vari ambiti di utilizzo, al fine di rendere chiaro a un soggetto esterno l'effettiva utilità del prodotto.
+
+\subsection{Scopo del documento}
+Il presente documento rappresenta un Business Plan per il sistema denominato \textbf{Woty},  sviluppato dal teamwork Sevenfold in corrispondenza del corso di Ingegneria del Software [2012].\\
 
 \subsection{Cos'è Woty}
 
@@ -403,7 +327,1173 @@ SevenFold si riserva di ampliare e/o modificare le tipologie di quest offerte du
 \item Temporizzata: quest con un limite di tempo di risoluzione.
 \end{itemize}
 
+\section{Use Case e descrizioni}
+
+\thispagestyle{fancy}
+
+Di seguito sono riportati gli Use Case (UC$^g$) relativi ai requisiti funzionali su cui si basa il sistema. Ogni diagramma UC sarà integrato con una spiegazione nella quale ne verranno indicati gli attori e i rispettivi scenari nei quali si possono trovare.\\
+Gli use case vengono organizzati in forma gerarchica secondo la seguente classificazione:\\
+La notazione utilizzata è la seguente:\\
+
+Uc X<.Y<.Z> >\\
+
+dove le seguenti sigle indicano:
+\begin{itemize}
+\item[\textbf{X:}] use case di primo livello
+\item[\textbf{Y:}] use case di secondo livello
+\item[\textbf{Z:}] use case di terzo livello\\
+\end{itemize}
+I campi Y e Z possono essere assenti.
+
+\subsection{Gerarchia attori}
+% inserire una figura
+\begin{figure}[h]
+\centering
+\caption{Gerarchia attori}
+\includegraphics[scale=0.87]{UseCase/UcUser} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+
+\item \textbf{Attori coinvolti}:
+\emph{- User}: utente generico del sistema.\\
+\emph{- Desktop-user}: è uno User che interagisce con il sistema tramite con un computer fisso.\\
+\emph{- Mobile-user}: è uno User che interagisce con il sistema tramite smartphone.\\
+\emph{- Super-user}: è uno User con privilegi di amministrazione.\\
+\emph{- PMAC Administrator}: amministratore PMAC.
+\end{itemize}
+
+\newpage
+
+\subsection{Uc: PMAC}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc: PMAC}
+\includegraphics[scale=0.69]{UseCase/UcPMAC} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+\emph{- User}: utente generico del sistema.\\
+\emph{- Desktop-user}: è uno User che interagisce con il sistema tramite con un computer fisso.\\
+\emph{- Mobile-user}: è uno User che interagisce con il sistema tramite smartphone.\\
+\emph{- Super-user}: è uno User con privilegi di amministrazione.\\
+\emph{- PMAC Administrator}: amministratore PMAC.
+
+\item \textbf{Precondizioni}:\\
+L'attore che interagisce con il sistema deve possedere un account e deve aver effettuato l'accesso.
+
+\item \textbf{Postcondizione}:\\
+Interazione conclusa, sistema PMAC in stato stabile e pronto per una nuova interazione.
+
+\item \textbf{Scenario principale}:\\
+- User può interagire con una quest, quindi richiedere, ricevere, affrontare o rifiutare una quest inviatagli dal sistema. [Uc 1]\\
+- User può visualizzare le proprie statistiche riguardo il completamento delle quest. [Uc 2]\\
+- User può visualizzare le classifiche della gamification. [Uc 8]\\
+- User può interagire con il proprio profilo, modificando e aggiornando i dati personali. [Uc 6]\\
+- Super-user può gestire gli account degli utenti della sua azienda. [Uc 3]\\
+- PMAC Administrator può creare nuovi workgroup, inserendo nuovi dipartimenti non ancora presenti alle quali assegnare determinate quest. [Uc 9]\\
+- PMAC Administrator può gestire i clienti del sistema. [Uc 5]\\\\
+- PMAC Administrator può gestire le quest con modifiche quali rimuovi, assegna e crea. [Uc 4]\\
+- PMAC Administrator può creare i badge$^g$ e gli achievement$^g$. Eventuali informazioni sulla composizione di questi elementi della gamification saranno specificate nei requisiti relativi. [Uc 7]
+\end{itemize}
 
 
+\subsection{Uc 1: Interagisce con una quest}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 1: Interagisce con una quest}
+\includegraphics[scale=0.8]{UseCase/Uc1} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+\emph{- User: utente generico del sistema.}
+
+\item \textbf{Precondizione:}\\
+L'utente che interagisce con il sistema deve possedere un account e deve aver effettuato l'accesso.
+
+\item \textbf{Postcondizione:}\\
+L'utente ha interagito con una quest ed il sistema è pronto per una nuova interazione.
+
+\item \textbf{Scenario principale:}\\
+User può ricevere una quest inviatagli dal sistema e affrontarla tramite l'utilizzo del browser, oppure può ignorarla per svolgere regolarmente il suo lavoro. User può anche richiedere al sistema una nuova quest tramite l'utilizzo dell'apposita funzione nell'interfaccia grafica. [Uc 1.1, Uc 1.2, Uc 1.3 e Uc 1.4]
+\end{itemize}
+\newpage
+
+\subsection{Uc 1.2: Affronta Quest}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 1.2: Affronta quest}
+\includegraphics[scale=0.87]{UseCase/Uc1_2} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+
+\item \textbf{Attori coinvolti:}\\
+\emph{- Desktop-user}: è uno User che interagisce con il sistema tramite con un computer fisso.\\
+\emph{- Mobile-user}: è uno User che interagisce con il sistema tramite smartphone.
+
+\item \textbf{Precondizione}:\\
+L'attore che interagisce con il sistema deve possedere un account e deve aver effettuato l'accesso. Il sistema PMAC si trova nella pagina dedicata alla scelta della quest da svolgere.
+
+\item \textbf{Postcondizione}:\\
+L'utente ha eseguito la quest e il sistema PMAC è pronto per una nuova interazione e si trova alla pagina dedicata alla selezione della quest da svolgere dall'utente.
+
+\item \textbf{Scenario principale}:\\
+- Desktop-User può eseguire quest di tipo testuale, con foto e con video. [Uc 1.2.1 + Uc 1.2.2 + Uc 1.2.3]\\
+- Mobile-user può eseguire tutte le tipologie di quest, comprese le quest con scansione di QR-Code. [Uc 1.2.1 + Uc 1.2.2 + Uc 1.2.3 + Uc 1.2.4]
+
+\item \textbf{Scenario alternativo}:\\
+L'utente decide di non rispondere alla quest avviata e il sistema torna alla pagina di selezione delle quest da svolgere. Questo scenario non è possibile per le quest temporizzate, le quali verranno segnalate all'utente nella pagine di selezione delle quest.
+
+\end{itemize}
+
+\newpage
+
+\subsection{Uc 2: Visualizza statistiche}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 2: Visualizza statistiche}
+\includegraphics[scale=0.87]{UseCase/Uc2} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+
+\item \textbf{Attori coinvolti:}\\
+\emph{- User}: utente generico del sistema.\\
+\emph{- Super-user}: figura presso il cliente con privilegi di amministrazione.
+
+\item \textbf{Precondizione}:\\
+L'attore che interagisce con il sistema deve possedere un account e deve aver effettuato l'accesso.
+
+\item \textbf{Postcondizione}:\\
+Il sistema PMAC si trova nella pagina dedicata alla visualizzazione delle statistiche personali di uno User.
+
+\item \textbf{Scenario principale}:\\
+- User può visualizzare le proprie statistiche (punteggi, badge ed achievement). [Uc 2.1]\\
+- Super-user può vedere tutte le classifiche ed entrando nel profilo di un utente può visualizzare i punteggi i badge e gli achievement di quell'utente. [Uc 2.2]
+\end{itemize}
+
+\newpage
+
+\subsection{Uc 2.1: Richiede le proprie statistiche utente}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 2.1: Richiede le proprie statistiche utente}
+\includegraphics[scale=0.87]{UseCase/Uc2_1} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+
+\item \textbf{Attori coinvolti:}\\
+\emph{- User}: utente generico del sistema.
+
+\item \textbf{Precondizione}:\\
+L'attore che interagisce con il sistema deve possedere un account e deve aver effettuato l'accesso. Il sistema PMAC si trova nella pagina dedicata alla visualizzazione delle statistiche personali dell'utente.
+
+\item \textbf{Postcondizione}:\\
+Le statistiche sono state visualizzate correttamente e il sistema rimane in attesa di una nuova interazione da parte dell'utente.
+
+\item \textbf{Scenario principale}:\\
+- User può visualizzare il proprio punteggio totale ricavato dalle risposte alle quest. [Uc 2.1.1]\\
+- User può visualizzare il numero totale di risposte corrette effettuate.[Uc 2.1.2]\\
+- User può visualizzare il numero totale di quest effettuate.[Uc 2.1.3]\\
+- User può visualizzare la percentuale di risposte corrette rispetto al totale di quest effettuate.[Uc 2.1.4]\\
+- User può visualizzare il proprio tempo medio di risposta alle quest. [Uc 2.1.5]\\
+- User può visualizzare i propri badges e achievements.[Uc 2.1.6]
+\end{itemize}
+
+\newpage
+
+\subsection{Uc 3: Gestisce utenti}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 3: Gestisce utenti}
+\includegraphics[scale=0.9]{UseCase/Uc3} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+
+\item \textbf{Attori coinvolti}:\\
+\emph{- Super-user}: figura presso il cliente con privilegi di amministrazione.
+
+\item \textbf{Precondizione}:\\
+Il Super-user deve possedere un account e deve aver effettuato l'accesso al sistema. Il sistema si trova nella pagina principale dedicata al Super-user.
+
+\item \textbf{Postcondizione}:\\
+Le azioni effettuate sugli User sono state salvate correttamente dal sistema e i ticket creati sono stati inoltrati.
+
+\item \textbf{Scenario principale}:\\
+- Super-user può creare un nuovo account inserendo i suoi campi dati, specificando il tipo di User tra Desktop-user e Mobile-user. [Uc 3.1 + Uc 3.2]\\
+- Super-user può modificare l'account di uno User cambiando i suoi dati personali e il tipo di account che possiede. [Uc 3.3]\\
+- Super-user può cancellare uno User dal sistema. [Uc 3.4]\\
+- Super-user può fare una richiesta testuale di modifica del contratto o di gestione degli account tramite la creazione di un ticket grazie all'interfaccia grafica. [Uc 3.5]
+\end{itemize}
+
+\newpage
+
+\subsection{Uc 3.1: Crea un nuovo User account}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 3.1: Crea un nuovo User account}
+\includegraphics[scale=0.9]{UseCase/Uc3_1} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+\emph{- Super-user}: figura presso il cliente con privilegi di amministrazione.
+
+\item \textbf{Precondizione}:\\
+Il Super-user deve possedere un account e deve aver effettuato l'accesso al sistema. Il sistema si trova nella pagina dedicata all'inserimento di un nuovo User.
+
+\item \textbf{Postcondizione}:\\
+Il nuovo User è stato creato e inserito correttamente nel sistema. Il sistema si trova nella pagina principale dedicata al Super-user.
+
+\item \textbf{Scenario principale}:\\
+- Super-user può inserire il nome e il cognome del nuovo User. [Uc 3.1.1 + Uc 3.1.2]\\
+- Super-user può inserire l'indirizzo e-mail del nuovo User, che verrà poi utilizzato dallo stesso come username nel login. [Uc 3.1.3]\\
+- Super-user può inserire una password per il nuovo User. [Uc 3.1.4]\\
+- Super-user può associare il nuovo User ad uno dei workgroup assegnati all'azienda. [Uc 3.1.5]\\
+- Super-user può inserire un'immagine che fungerà da avatar per il nuovo User. [Uc 3.1.6]
+
+\item \textbf{Scenario alternativo}:\\
+Il Super-user inserisce un nuovo User con indirizzo email già occupato o non valido. Il sistema segnala l'errore e ripropone la schermata dedicata all'inserimento di un nuovo User.
+
+\end{itemize}
+
+\newpage
+
+\subsection{Uc 3.3: Modifica uno User}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 3.3: Modifica uno User}
+\includegraphics[scale=0.9]{UseCase/Uc3_3} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+\emph{- Super-user}: figura presso il cliente con privilegi di amministrazione.
+
+\item \textbf{Precondizione}:\\
+Il Super-user deve possedere un account e deve aver effettuato l'accesso al sistema. Il sistema si trova nella pagina dedicata alla modifica di uno User.
+
+\item \textbf{Postcondizione}:\\
+Lo User è stato modificato e le modifiche sono state salvate correttamente nel sistema. Il sistema si trova nella pagina principale dedicata al Super-user.
+
+\item \textbf{Scenario principale}:\\
+- Super-user può modificare il nome o il cognome dello User. [Uc 3.3.1 + Uc 3.3.2]\\
+- Super-user può modificare l'indirizzo e-mail dello User, che verrà poi utilizzato dallo stesso come nuovo username nel login. [Uc 3.3.3]\\
+- Super-user può modificare la password dello User. [Uc 3.3.4]\\
+- Super-user può modificare il workgroup associato allo User. [Uc 3.3.5]\\
+- Super-user può modificare l'avatar dello User. [Uc 3.3.6]\\
+- Super-user può assegnare dei badges allo User. [Uc 3.3.7]
+
+\item \textbf{Scenario alternativo}:\\
+Il Super-user sostituisce l'indirizzo email di uno User con uno già occupato o non valido. Il sistema segnala l'errore e ripropone la schermata dedicata alla modifica dello User.
+
+\end{itemize}
+
+\newpage
+
+\subsection{Uc 4: Gestisce le quest}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 4: Gestisce le quest}
+\includegraphics[scale=0.9]{UseCase/Uc4} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+\emph{- PMAC Administrator}: amministratore PMAC.
+
+\item \textbf{Precondizione}:\\
+PMAC Administrator deve possedere un account e deve aver effettuato l'accesso al sistema. Il sistema si trova nella pagina dedicata alla gestione delle quest.
+
+\item \textbf{Postcondizione}:\\
+Le quest sono state cancellate o caricate nel sistema PMAC e assegnate correttamente ai workgroup. Il sistema si trova nella pagina dedicata alla gestione delle quest.
+
+\item \textbf{Scenario principale}:\\
+- PMAC Administrator può creare una nuova quest per ampliare il database$^g$ usato per la gamification. [Uc 4.1]\\
+- PMAC Administrator può rimuovere una quest dal sistema. [Uc 4.2]\\
+- PMAC Administrator può assegnare una quest ad un workgroup. [Uc 4.3]
+\end{itemize}
+
+\newpage
+
+\subsection{Uc 4.1: Crea una quest}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 4.1: Crea una quest}
+\includegraphics[scale=0.9]{UseCase/Uc4_1} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+\emph{- PMAC Administrator}: amministratore PMAC.
+
+\item \textbf{Precondizione}:\\
+L'attore che interagisce con il sistema deve possedere un account e deve aver effettuato l'accesso. Il sistema si trova nella pagina dedicata alla creazione di una quest. 
+
+\item \textbf{Postcondizione}:\\
+La nuova quest è stata creata e salvata correttamente nel sistema. Il sistema si trova nella pagina dedicata alla gestione delle quest.
+
+\item \textbf{Scenario principale}:\\
+- PMAC Administrator può scegliere il tipo della quest che sta creando tra le seguenti tipologie di quest: quest composte da solo testo, quest testuali con foto, quest testuali con video o quest con QR code. Il PMAC Administrator deve poter inserire ogni elemento che specifica le tipologie di quest. [Uc 4.1.1]\\
+- PMAC Administrator può inserire il testo principale della quest che può contenere la domanda o una spiegazione del compito cognitivo da svolgere, le risposte disponibili per la quest specificando quali sono quelle corrette.[Uc 4.1.2 + Uc 4.1.3 + Uc 4.1.4]\\
+- PMAC Administrator può inserire il numero di punti che saranno assegnati allo User che risponderà correttamente alla quest. [Uc 4.1.5]\\
+- PMAC Administrator può inserire il tempo limite, in caso di risposta temporizzata, entro il quale lo User dovrà rispondere alla quest. [Uc 4.1.6]\\
+- PMAC Administrator può inserire una nota esplicativa che potrà essere visualizzata in caso di risposta errata da parte di uno User. [Uc 4.1.7]
+
+\item \textbf{Scenario alternativo}:\\
+PMAC Administrator non conferma la creazione della nuova quest ed esce dalla pagina dedicata alla creazione di una quest. Il sistema ritorna nella pagina dedicata alla gestione delle quest.
+\end{itemize}
+
+
+\subsection{Uc 5: Gestisce i clienti}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 5: Gestisce i clienti}
+\includegraphics[scale=0.9]{UseCase/Uc5} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+PMAC Administrator: amministratore PMAC.
+
+\item \textbf{Precondizione}:\\
+PMAC Administrator deve possedere un account e deve aver effettuato l'accesso al sistema. Il sistema si trova nella pagina dedicata alla gestione degli account aziendali.
+
+\item \textbf{Postcondizione}:\\
+Le modifiche al cliente, la sua creazione o l'eliminazione sono state eseguite correttamente. Il sistema si trova nella pagina dedicata alla gestione degli account aziendali.
+
+\item \textbf{Scenario principale}:\\
+- PMAC Administrator può eliminare un cliente dal sistema. [Uc 5.1]\\
+- PMAC Administrator può inserire o modificare un cliente. [Uc 5.2 + Uc 5.3]\\
+- PMAC Administrator può assegnare un Super-user al cliente ed eventualmente crearne uno. [Uc 5.5 + Uc 5.6]\\
+- PMAC Administrator può ricevere un ticket del sistema mandatogli da un Super-user e risolvere le problematiche descritte. [Uc 5.4]
+\end{itemize}
+
+%\newpage
+
+\subsection{Uc 5.2: Inserisce un cliente}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 5.2: Inserisce un cliente}
+\includegraphics[scale=0.9]{UseCase/Uc5_2} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+PMAC Administrator: amministratore PMAC.
+
+\item \textbf{Precondizione}:\\
+PMAC Administrator deve possedere un account e deve aver effettuato l'accesso al sistema. Il sistema si trova nella pagina dedicata all'inserimento di un nuovo account cliente.
+
+\item \textbf{Postcondizione}:\\
+L'inserimento del cliente è stato eseguito correttamente. Il sistema si trova nella pagina dedicata alla gestione degli account aziendali.
+
+\item \textbf{Scenario principale}:\\
+- PMAC Administrator può specificare il numero totale di account creabili dal cliente a seconda della licenza acquistata. [Uc 5.2.1]\\
+- PMAC Administrator può inserire il nome del cliente. [Uc 5.2.2]\\
+- PMAC Administrator può inserire l'indirizzo e-mail del cliente. [Uc 5.2.3]\\
+- PMAC Administrator può inserire un recapito telefonico del cliente. [Uc 5.2.4]\\
+- PMAC Administrator può inserire una descrizione del cliente. [Uc 5.2.5]\\
+- PMAC Administrator può specificare il pool di workgroup dedicati al cliente. [Uc 5.2.6]
+
+\item \textbf{Scenario alternativo}:\\
+PMAC Administrator non conferma l'inserimento del nuovo cliente. Il sistema ritorna alla pagina dedicata alla gestione degli account aziendali.
+
+\end{itemize}
+
+%\newpage
+
+\subsection{Uc 5.3: Modifica un cliente}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 5.3: Modifica un cliente}
+\includegraphics[scale=0.9]{UseCase/Uc5_3} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+PMAC Administrator: amministratore PMAC.
+
+\item \textbf{Precondizione}:\\
+PMAC Administrator deve possedere un account e deve aver effettuato l'accesso al sistema. Il sistema si trova nella pagina dedicata alla modifica di un account aziendale.
+
+\item \textbf{Postcondizione}:\\
+Le modifiche apportate al cliente sono state salvate correttamente. Il sistema si trova nella pagina dedicata alla gestione degli account aziendali.
+
+\item \textbf{Scenario principale}:\\
+- PMAC Administrator può modificare il numero totale di account creabili dal cliente. [Uc 5.3.1]\\
+- PMAC Administrator può modificare il nome del cliente. [Uc 5.3.2]\\
+- PMAC Administrator può modificare l'indirizzo e-mail del cliente. [Uc 5.3.3]\\
+- PMAC Administrator può modificare un recapito telefonico del cliente. [Uc 5.3.4]\\
+- PMAC Administrator può modificare una descrizione del cliente. [Uc 5.3.5]\\
+- PMAC Administrator può modificare, aggiungendo o eliminando più workgroup, il pool dedicato al cliente. [Uc 5.3.6]
+
+\item \textbf{Scenario alternativo}:\\
+PMAC Administrator non conferma le modifiche ai dati del cliente. Il sistema ritorna alla pagina dedicata alla gestione degli account aziendali.
+
+\end{itemize}
+
+
+\subsection{Uc 6: Interagisce con il proprio profilo}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 6: Interagisce con il proprio profilo}
+\includegraphics[scale=0.9]{UseCase/Uc6} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+- User: utente generico del sistema.
+
+\item \textbf{Precondizione}:\\
+L'utente che interagisce con il sistema deve possedere un account e deve aver effettuato l'accesso. Il sistema si trova nella pagina principale dedicata allo User.
+
+\item \textbf{Postcondizione}:\\
+Le visualizzazioni/modifiche al profilo sono state eseguite correttamente. 
+
+\item \textbf{Scenario principale}:\\
+- User può modificare il proprio profilo, portando cambiamenti ai suoi dati personali. [Uc 6.1]\\
+- User può visualizzare il proprio profilo. [Uc 6.2]
+\end{itemize}
+
+\newpage
+
+\subsection{Uc 6.1: Modifica profilo}
+% inserire una figura
+\begin{figure}[ht]
+\centering
+\caption{Uc 6.1: Modifica profilo}
+\includegraphics[scale=0.9]{UseCase/Uc6_1} % vedi Lateximpazienye pg67
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Attori coinvolti}:\\
+- User: utente generico del sistema.
+
+\item \textbf{Precondizione}:\\
+L'utente che interagisce con il sistema deve possedere un account e deve aver effettuato l'accesso. Il sistema si trova nella pagina dedicata alla modifica del profilo utente.
+
+\item \textbf{Postcondizione}:\\
+Le modifiche al profilo sono state eseguite correttamente. Il sistema si trova nella pagina principale dedicata allo User.
+
+\item \textbf{Scenario principale}:\\
+- User può modificare il proprio indirizzo e-mail. [Uc 6.1.1]\\
+- User può modificare la propria password. [Uc 6.1.2]\\
+- User può modificare il proprio avatar. [Uc 6.1.3]
+
+\item \textbf{Scenario alternativo}:\\
+Lo User non conferma le modifiche effettuate al proprio profilo, il sistema ritorna alla pagina principale dedicata allo User mantenendo correttamente salvati i dati dello stesso.
+
+\end{itemize}
+
+
+% --------------------------------------------------------------------
+
+% ANALISI DEI REQUISITI ( 4° CAPITOLO) 
+
+\newpage
+
+\section{Analisi dei requisiti}
+
+\thispagestyle{fancy}
+
+\subsection{Classificazione dei requisiti}
+Di seguito viene riportato l'elenco dei requisiti del sistema PMAC.
+I requisiti vengono organizzati in forma gerarchica. Ogni requisito può quindi avere più sotto-requisiti.\\
+Quando ognuno di questi sotto-requisiti viene soddisfatto allora il requisito di livello superiore viene soddisfatto.\\
+\\
+La notazione utilizzata è la seguente:\\
+	
+<F|P|Q|V|I><o|d|z>-X<.Y<.Z> >\\
+
+dove le seguenti sigle indicano:
+\begin{itemize}
+\item[\textbf{F:}] requisito funzionale
+\item[\textbf{P:}] requisito prestazionale
+\item[\textbf{Q:}] requisito di qualità
+\item[\textbf{V:}] requisito di vincolo
+\item[\textbf{I:}] requisito di interfacciamento\\
+\end{itemize}
+\begin{itemize}
+\item[\textbf{o:}] obbligatorio
+\item[\textbf{d:}] desiderabile
+\item[\textbf{z:}] opzionale\\
+\end{itemize}
+\begin{itemize}
+\item[\textbf{X:}] requisito di primo livello
+\item[\textbf{Y:}] sotto-requisito
+\item[\textbf{Z:}] sotto-requisito di un sotto-requisito\\
+\end{itemize}
+I campi Y e Z possono essere assenti.
+
+\newpage
+
+\subsection{Requisiti funzionali}
+
+\subsubsection{Requisiti funzionali obbligatori}
+
+\begin{longtable}{|p{1,4cm}|p{10,0cm}|p{1,6cm}|}
+\caption{Requisiti funzionali obbligatori}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Codice}& \textbf{Descrizione}& \textbf{Fonte}\\
+\hline
+Fo-1 & Il sistema deve permettere al PMAC Administrator la creazione di workgroup che rappresentano il dipartimento di appartenenza di uno User & Interno\\
+\hline
+Fo-1.1 & Uno User può appartenere ad un solo workgroup & Interno\\
+\hline
+Fo-2 & Il sistema deve permettere al PMAC Administrator la gestione dei profili delle aziende clienti & Proponente\\
+\hline
+Fo-2.1 & Il sistema deve permettere al PMAC Administrator l'assegnazione/abilitazione delle metriche per la gamification alle varie aziende & Proponente\\
+\hline
+Fo-2.1.1 & Il sistema deve permettere la creazione di achievement che consistono in un tipo che specifica come verrà ottenuto un achievement(per tempo di risposta, punteggio, numero o percentuale di risposte corrette), un nome, una descrizione, un'immagine e un campo dati che indica a che valore viene sbloccato l'achievement & Capitolato\\
+\hline
+Fo-2.1.2 & Il sistema deve permettere la creazione di badge che consistono in un nome, una descrizione e un'immagine & Capitolato\\
+\hline
+Fo-2.2 & Il sistema deve permettere al PMAC Administrator l'aggiunta del profilo di un'azienda & Proponente\\
+\hline
+Fo-2.2.1 & Il sistema deve permettere l'inserimento del numero di User account creabili dall'azienda & Proponente\\
+\hline
+Fo-2.2.2 & Il sistema deve permettere l'inserimento del nome & Interno\\
+\hline
+Fo-2.2.3 & Il sistema deve permettere l'inserimento di un recapito telefonico & Interno\\
+\hline
+Fo-2.2.4 & Il sistema deve permettere l'inserimento di un indirizzo email & Interno\\
+\hline
+Fo-2.2.5 & Il sistema deve permettere l'inserimento di una descrizione dell'azienda & Interno\\
+\hline
+Fo-2.2.6 & Il sistema deve permettere l'assegnazione di un pool di workgroup all'azienda & Interno\\
+\hline
+Fo-2.2.7 & Il sistema deve permettere la creazione di un Super-User associato all'azienda che consta delle stesse informazioni di uno User & Interno\\
+\hline
+Fo-2.3 & Il sistema deve permettere al PMAC Administrator la modifica del profilo di un'azienda & Interno\\
+\hline
+Fo-2.3.1 & Il sistema deve permettere la modifica del numero di User account creabili dall'azienda & Interno\\
+\hline
+Fo-2.3.2 & Il sistema deve permettere la modifica del nome & Interno\\
+\hline
+Fo-2.3.3 & Il sistema deve permettere la modifica del recapito telefonico & Interno\\
+\hline
+Fo-2.3.4 & Il sistema deve permettere la modifica dell'indirizzo email & Interno\\
+\hline
+Fo-2.3.5 & Il sistema deve permettere la modifica della descrizione dell'azienda & Interno\\
+\hline
+Fo-2.3.6 & Il sistema deve permettere la modifica del pool di workgroup assegnato ad una azienda & Interno\\
+\hline
+Fo-2.3.7 & Il sistema deve permettere la modifica dei Super-User associati all'azienda & Interno\\
+\hline
+Fo-2.4 & Il sistema deve permettere al PMAC Administrator l'eliminazione del profilo di un'azienda & Interno\\
+\hline
+Fo-2.5 & Il sistema deve permettere al PMAC Administrator la ricezione di ticket inviati dalle aziende & Proponente\\
+\hline
+Fo-3 & Il sistema deve permettere al PMAC Administrator la gestione delle quest & Capitolato\\
+\hline
+Fo-3.1 & Il sistema deve permettere al PMAC Administrator la creazione di quest & Capitolato\\
+\hline
+Fo-3.1.1 & Il sistema deve permettere l'inserimento del tipo di quest che consiste in Vero/Falso, a risposta multipla, con immagini, con video o scansione QR & Capitolato\\
+\hline
+Fo-3.1.2 & Il sistema deve permettere l'inserimento del testo della quest & Capitolato\\
+\hline
+Fo-3.1.3 & Il sistema deve permettere l'inserimento delle risposte disponibili & Interno\\
+\hline
+Fo-3.1.4 & Il sistema deve permettere l'inserimento delle risposte corrette & Interno\\
+\hline
+Fo-3.1.5 & Il sistema deve permettere l'inserimento del punteggio assegnato alla risoluzione della quest & Interno\\
+\hline
+Fo-3.1.6 & Il sistema deve permettere l'inserimento di un tempo limite per la risoluzione della quest & Capitolato\\
+\hline
+Fo-3.1.7 & Il sistema deve permettere l'inserimento di una nota esplicativa da visualizzarsi nel caso di risposta errata & Interno\\
+\hline
+Fo-3.2 & Il sistema deve permettere al PMAC Administrator l'associazione di una quest ai diversi workgroup & Interno\\
+\hline
+Fo-3.3 & Il sistema deve permettere al PMAC Administrator la rimozione di quest & Interno\\
+\hline
+Fo-4 & Il sistema deve permettere al Super-user la gestione degli User & Proponente\\
+\hline
+Fo-4.1 & Il sistema deve permettere al Super-user di registrare nuovi User entro il limite imposto dal PMAC Administrator & Proponente\\
+\hline
+Fo-4.1.1 & Il sistema deve permettere di specificare il tipo di User (Desktop-User o un Mobile-User) & Capitolato\\
+\hline
+Fo-4.1.2 & Il sistema deve permettere l'inserimento del nome & Interno\\
+\hline
+Fo-4.1.3 & Il sistema deve permettere l'inserimento del cognome & Interno\\
+\hline
+Fo-4.1.4 & Il sistema deve permettere l'inserimento dell'indirizzo email & Interno\\
+\hline
+Fo-4.1.5 & Il sistema deve permettere l'inserimento della password & Interno\\
+\hline
+Fo-4.1.6 & Il sistema deve permettere l'inserimento di un avatar & Interno\\
+\hline
+Fo-4.1.7 & Il sistema deve permettere l'associazione dello User ad uno dei workgroup disponibili all'azienda & Proponente\\
+\hline
+Fo-4.2 & Il sistema deve permettere al Super-user di modificare il profilo di uno User & Interno\\
+\hline
+Fo-4.2.1 & Il sistema deve permettere la modifica della tipologia di User (Desktop-User o un Mobile-User) & Capitolato\\
+\hline
+Fo-4.2.2 & Il sistema deve permettere la modifica del nome & Interno\\
+\hline
+Fo-4.2.3 & Il sistema deve permettere la modifica del cognome & Interno\\
+\hline
+Fo-4.2.4 & Il sistema deve permettere la modifica dell'indirizzo email & Interno\\
+\hline
+Fo-4.2.5 & Il sistema deve permettere la modifica della password & Interno\\
+\hline
+Fo-4.2.6 & Il sistema deve permettere la modifica dell'avatar & Interno\\
+\hline
+Fo-4.2.7 & Il sistema deve permettere la modifica del workgroup associato allo User & Proponente\\
+\hline
+Fo-4.3 & Il sistema deve permettere al Super-user di eliminare uno User & Interno\\
+\hline
+Fo-4.4 & Il sistema deve permettere al Super-user la visualizzazione dei profili e delle statistiche di tutti gli User & Proponente\\
+\hline
+Fo-4.5 & Il Super-user deve poter svolgere tutte le attività disponibili a uno User & Proponente\\
+\hline
+Fo-4.6 & Il Super-user deve poter aprire ticket di richiesta/assistenza destinati al PMAC Administrator che consistono di un titolo, una data e una descrizione del problema riscontrato & Proponente\\
+\hline
+Fo-5 & Gli Desktop-User potranno risolvere tutte le tipologie di quest, escluse le quest che richiedono la scansione di codici QR & Capitolato\\
+\hline
+Fo-5.1 & I Desktop-User possono eseguire quest testuali che si dividono in domande vero/falso, risposta chiusa tra un certo numero alternative e risposta multipla & Capitolato\\
+\hline
+Fo-5.2 & I Desktop-User possono eseguire quest con immagini & Capitolato\\
+\hline
+Fo-5.3 & I Desktop-User possono eseguire quest con video & Capitolato\\
+\hline
+Fo-6 & I Mobile-User potranno risolvere tutte le tipologie di quest & Capitolato\\
+\hline
+Fo-6.1 & I Mobile-User possono eseguire quest testuali che si dividono in domande vero/falso, risposta chiusa tra un certo numero alternative e risposta multipla & Capitolato\\
+\hline
+Fo-6.2 & I Mobile-User possono eseguire quest con immagini & Capitolato\\
+\hline
+Fo-6.3 & I Mobile-User possono eseguire quest con video & Capitolato\\
+\hline
+Fo-6.4 & I Mobile-User possono eseguire quest che richiedono la  scansione di QR-Code & Capitolato\\
+\hline
+Fo-7 & Il sistema deve permettere l'autenticazione degli User tramite email e password & Interno\\
+\hline
+Fo-8 & Il sistema deve notificare allo User la presenza di quest assegnategli & Capitolato\\
+\hline
+Fo-8.1 & Il sistema deve permettere allo User la visualizzazione e la risoluzione delle quest notificate & Capitolato\\
+\hline
+Fo-8.2 & Lo User può rifiutare di sottoporsi alle quest in seguito alla ricezione delle notifiche & Capitolato\\
+\hline
+Fo-8.3 & Lo User può disattivare la ricezione delle notifiche per un dato intervallo di tempo & Capitolato\\
+\hline
+Fo-8.4 & Lo User può richiedere quest aggiuntive & Capitolato\\
+\hline
+Fo-9 & Il sistema deve permettere allo User la visualizzazione delle classifiche stilate sulla base delle statistiche degli User & Capitolato\\
+\hline
+Fo-10 & Il sistema deve permettere allo User la gestione del proprio profilo & Interno\\
+\hline
+Fo-10.1 & Il sistema deve permettere allo User la modifica del proprio profilo & Interno\\
+\hline
+Fo-10.1.1 & Il sistema deve permettere la modifica dell'indirizzo email & Interno\\
+\hline
+Fo-10.1.2 & Il sistema deve permettere la modifica della password & Interno\\
+\hline
+Fo-10.1.3 & Il sistema deve permettere la modifica dell'avatar & Interno\\
+\hline
+Fo-10.2 & Il sistema deve permettere allo User la visualizzazione del proprio profilo & Interno\\
+\hline
+Fo-10.3 & Il sistema deve permettere allo User la visualizzazione delle statistiche personali & Interno\\
+\hline
+Fo-10.3.1 & Il sistema deve permettere la visualizzazione del punteggio totale & Interno\\
+\hline
+Fo-10.3.2 & Il sistema deve permettere la visualizzazione del numero totale di quest effettuate & Interno\\
+\hline
+Fo-10.3.3 & Il sistema deve permettere la visualizzazione del numero totale di risposte corrette date & Interno\\
+\hline
+Fo-10.3.4 & Il sistema deve permettere la visualizzazione della percentuale di risposte corrette date a fronte dei tentativi di risoluzione effettuati & Interno\\
+\hline
+Fo-10.3.5 & Il sistema deve permettere la visualizzazione del tempo medio di risposta & Interno\\
+\hline
+Fo-10.4 & Il sistema deve permettere allo User la visualizzazione dei badge e degli achievement ottenuti & Interno\\
+%\hline
+
+\end{longtable}
+
+\newpage
+
+\subsection{Requisiti funzionali desiderabili}
+\begin{longtable}{|p{1,4cm}|p{10,0cm}|p{1,6cm}|}
+\caption{Requisiti funzionali desiderabili}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Codice}& \textbf{Descrizione}& \textbf{Fonte}\\
+\hline
+Fd-1 & Il sistema deve permettere allo User la visualizzazione dei profili degli altri User & Proponente\\
+\hline
+Fd-2 & Il sistema, al completamento di una quest, deve permettere allo user la visualizzazione della soluzione o di una breve nota esplicativa & Proponente\\
+\end{longtable}
+
+\subsubsection{Requisiti funzionali opzionali}
+\begin{longtable}{|p{1,4cm}|p{10,0cm}|p{1,6cm}|}
+\caption{Requisiti funzionali opzionali}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Codice}& \textbf{Descrizione}& \textbf{Fonte}\\
+\hline
+Fz-1 & Il sistema deve prevedere una tipologia di quest risolvibile da postazione fissa con l'ausilio di un dispositivo mobile che consiste nella scansione di un Qr-Code & Capitolato\\
+\hline
+Fz-2 & Le funzionalità del sistema sono studiate per invogliare l'utente alla partecipazione & Proponente\\
+\hline
+Fz-2.1 & Gli User possono formare delle squadre con altri User, le quali avranno un nome e un punteggio proprio derivato dal successo dei componenti del gruppo all'interno del sistema & Interno\\
+\hline
+Fz-2.2 & Agli User verrà associato un grado all'interno della propria squadra che muterà secondo l'apporto di punti alla squadra & Interno\\
+\hline
+Fz-2.3 & Ad ogni User è assegnato un livello che aumenta con il conseguimento di successi all'interno del "gioco" & Interno\\
+\hline
+Fz-2.4 & Gli User possono spedire messaggi testuali ad altri User & Interno\\
+\hline
+Fz-2.4.1 & Gli User possono spedire messaggi pubblici ad altri User che verranno visualizzati sul profilo dello User destinatario & Interno\\
+\hline
+Fz-2.4.2 & Gli User possono spedire messaggi privati ad altri User che verranno visualizzati solo dallo User destinatario & Interno\\
+\hline
+Fz-2.5 & Gli User possono visualizzare le azioni recenti compiute da altri User o squadre all'interno del sistema & Interno\\
+\hline
+Fz-2.5.1 & Gli User possono un feedback di apprezzamento su un'azione compiuta da altri User & Interno\\
+\hline
+Fz-2.5.2 & Gli User possono lasciare un commento testuale su di una delle azioni visualizzate & Interno\\
+\hline
+Fz-2.5.3 & I Super-user possono moderare i commenti degli User & Interno\\
+\hline
+Fz-3 & Il sistema deve prevedere un'interfaccia verso sensori di macchinari o altre strumentazioni & Capitolato\\
+
+\end{longtable}
+
+\newpage
+
+\subsection{Requisiti di qualità}
+
+\subsubsection{Requisiti di qualità obbligatori}
+
+\begin{longtable}{|p{1,4cm}|p{10,0cm}|p{1,6cm}|}
+\caption{Requisiti di qualità obbligatori}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Codice}& \textbf{Descrizione}& \textbf{Fonte}\\
+\hline
+Qo-1 & Il sistema deve essere multiutente & Capitolato\\
+\hline
+Qo-2 & Il sistema deve essere robusto impedendo la perdita o corruzione dei dati dell'utente o di utilizzo del software nell'eventualità di problemi di rete & Interno\\
+\hline
+Qo-3 & Il sistema deve essere accompagnato dalla documentazione sui test eseguiti & Interno\\
+\end{longtable}
+
+
+
+\subsubsection{Requisiti di qualità desiderabili}
+
+\begin{longtable}{|p{1,4cm}|p{10,0cm}|p{1,6cm}|}
+\caption{Requisiti di qualità desiderabili}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Codice}& \textbf{Descrizione}& \textbf{Fonte}\\
+
+\hline
+Qd-1 & Il sistema deve prevedere un pacchetto di installazione che installa e configura il suddetto e tutti i software da esso richiesti & Proponente\\
+\hline
+Qd-2 & La gestione tecnica deve essere minima e totalmente a carico del PMAC Administrator & Interno\\
+\end{longtable}
+
+
+
+\subsubsection{Requisiti di qualità opzionali}
+
+\begin{longtable}{|p{1,4cm}|p{10,0cm}|p{1,6cm}|}
+\caption{Requisiti di qualità opzionali}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Codice}& \textbf{Descrizione}& \textbf{Fonte}\\
+\hline
+Qz-1 & Il sistema deve fornire un help contestuale & Interno\\
+\hline
+Qz-2 & Si prevede la realizzazione di un manuale di sviluppo destinato a coloro vorranno estendere il sistema & Interno\\
+\end{longtable}
+\vspace{0.7cm}
+\newpage
+
+
+\subsection{Requisiti di vincolo}
+\subsubsection{Requisiti di vincolo obbligatori}
+
+\begin{longtable}{|p{1,4cm}|p{10,0cm}|p{1,6cm}|}
+\caption{Requisiti di vincolo obbligatori}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Codice}& \textbf{Descrizione}& \textbf{Fonte}\\
+\hline
+Vo-1 & Il sistema deve essere permanentemente connesso ad internet & Capitolato\\
+\hline
+Vo-2 & Le notifiche del sistema non devono essere invasive per non interferire con il normale svolgimento delle attività lavorative & Interno\\
+\end{longtable}
+\vspace{0.7cm}
+
+
+
+\subsection{Requisiti di interfacciamento}
+
+\subsubsection{Requisiti di interfacciamento obbligatori}
+
+\begin{longtable}{|p{1,4cm}|p{10,0cm}|p{1,6cm}|}
+\caption{Requisiti di interfacciamento obbligatori}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Codice}& \textbf{Descrizione}& \textbf{Fonte}\\
+\hline
+Io-1 & Il sistema deve prevedere un'interfaccia destinata al PMAC Administrator & Capitolato\\
+\hline
+Io-2 & Il sistema deve prevedere un'interfaccia per l'amministrazione destinata a un Super-user & Capitolato\\
+\hline
+Io-3 & Il sistema deve prevedere un'interfaccia User per postazione fissa & Capitolato\\
+\hline
+Io-4 & Il sistema deve prevedere un'interfaccia User per piattaforma mobile & Capitolato\\
+\hline
+Io-5 & Il sistema deve prevedere una visualizzazione a video delle notifiche ricevute anche a browser chiuso & Capitolato\\
+\end{longtable}
+% --------------------------------------------------------------------
+
+% TRACCIAMENTO ( 5° CAPITOLO) 
+
+\newpage
+
+\section{Tracciamento}
+
+\thispagestyle{fancy}
+
+Di seguito sono riportate le tabelle di tracciamento tra Use Case - requisito e viceversa.\\
+Requisiti di vincolo, qualitativi o di interfacciamento non sono stati tracciati da alcun Use Case in quanto non sono rappresentabili da nessuno di essi, ma derivano dalle richieste del capitolato o del proponente o da decisioni interne al gruppo in seguito allo studio del caso.\\
+
+\subsection{Tracciamento Use Case - Requisiti}
+
+\begin{longtable}{|p{3.5cm}|p{6.5cm}|p{3cm}|}
+\caption{Tracciamento Use Case - Requisiti}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Codice Use Case}& \textbf{Nome Use Case}& \textbf{Requisito}\\
+\hline
+Uc 1 & Interagisce con una quest & Fo-5 \newline Fo-6\\
+\hline
+\ \ \ \ Uc 1.1 & Riceve quest & Fo-8 \newline\\
+\hline
+\ \ \ \ Uc 1.2 & Affronta quest & Fo-8.1 \newline Fo-5 \newline Fo-5.1 \newline Fo-5.2 \newline Fo-5.3 \newline Fo-6 \newline Fo-6.1 \newline Fo-6.2 \newline Fo-6.3 \newline Fo-6.4\\
+\hline
+\ \ \ \ Uc 1.3 & Rifiuta quest & Fo-8.2 \newline Fo-8.3 \\
+\hline
+\ \ \ \ Uc 1.4 & Chiede una quest & Fo-8.4\\
+\hline
+Uc 2 & Visualizza statistiche & Fo-10.3\\
+\hline
+\ \ \ \ Uc 2.1 & Richiede le proprie statistiche & Fo-10.3.1 \newline Fo-10.3.2 \newline Fo-10.3.3 \newline Fo-10.3.4 \newline Fo-10.3.5 \newline Fo-10.4\\
+\hline
+\ \ \ \ Uc 2.2 & Richiede statistiche di qualsiasi User & Fo-4.4\\
+\hline
+Uc 3 & Gestisce utenti presso un cliente & Fo-4\\
+\hline
+\ \ \ \ Uc 3.1 & Crea nuovo account user & Fo-4.1 \newline Fo-4.1.2 \newline Fo-4.1.3 \newline Fo-4.1.4 \newline Fo-4.1.5 \newline Fo-4.1.6 \newline Fo-4.1.7\\
+\hline
+\ \ \ \ Uc 3.2 & Sceglie tipo user & Fo-4.1.1 \newline Fo-4.2.1\\
+\hline
+\ \ \ \ Uc 3.3 & Modifica user & Fo-4.2 \newline Fo-4.2.2 \newline Fo-4.2.3 \newline Fo-4.2.4 \newline Fo-4.2.5 \newline Fo-4.2.6 \newline Fo-4.2.7\\
+\hline
+\ \ \ \ Uc 3.4 & Cancella user & Fo-4.3\\
+\hline
+\ \ \ \ Uc 3.5 & Crea ticket & Fo-4.6\\
+\hline
+Uc 4 & Gestisce le quest & Fo-3\\
+\hline
+\ \ \ \ Uc 4.1 & Crea una quest & Fo-3.1 \newline Fo-3.1.2 \newline Fo-3.1.3 \newline Fo-3.1.4 \newline Fo-3.1.5 \newline Fo-3.1.6 \newline Fo-3.1.7\\
+\hline
+\ \ \ \ Uc 4.2 & Rimuove quest & Fo-3.3\\
+\hline
+\ \ \ \ Uc 4.3 & Assegna quest a workgroup & Fo-3.2\\
+\hline
+Uc 5 & Gestisce i clienti & Fo-2\\
+\hline
+\ \ \ \ Uc 5.1 & Elimina un cliente & Fo-2.4\\
+\hline
+\ \ \ \ Uc 5.2 & Inserisce un cliente & Fo-2.2 \newline Fo-2.2.1 \newline Fo-2.2.2 \newline Fo-2.2.3 \newline Fo-2.2.4 \newline Fo-2.2.5 \newline Fo-2.2.6\\
+\hline
+\ \ \ \ Uc 5.3 & Modifica un cliente & Fo-2.3 \newline Fo-2.3.1 \newline Fo-2.3.2 \newline Fo-2.3.3 \newline Fo-2.3.4 \newline Fo-2.3.5 \newline Fo-2.3.6 \\
+\hline
+\ \ \ \ Uc 5.4 & Riceve un ticket & Fo-2.5\\
+\hline
+\ \ \ \ Uc 5.5 & Assegna un super-user & Fo-2.2.7 \newline Fo-2.3.7\\
+\hline
+\ \ \ \ Uc 5.6 & Crea nuovo super-user & Fo-2.2.7 \\
+\hline
+Uc 6 & Interagisce con il proprio profilo & Fo-10\\
+\hline
+\ \ \ \ Uc 6.1 & Modifica profilo & Fo-10.1 \newline Fo-10.1.1 \newline Fo-10.1.2 \newline Fo-10.1.3\\
+\hline
+\ \ \ \ Uc 6.2 & Visualizza profilo & Fo-10.2\\
+\hline
+Uc 7 & Crea badges e achievements & Fo-2.1 \newline Fo-2.1.1 \newline Fo-2.1.2\\
+\hline
+Uc 8 & Visualizza classifiche & Fo-9\\
+\hline
+Uc 9 & Crea workgroup & Fo-1\\
+
+\end{longtable}
+
+\newpage
+
+\subsection{Tracciamento Requisito - Use Case}
+
+\begin{longtable}{|p{5cm}|p{5cm}|}
+\caption{Tracciamento Requisito - Use Case}\\
+\hline
+\endfirsthead
+\multicolumn{2}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{2}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Codice Requisito}& \textbf{Codice Use Case}\\
+\hline
+Fo-1 & Uc 9\\
+\hline
+Fo-2 & Uc 5\\
+\hline
+\ \ \ \ Fo-2.1 & Uc 7\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.1.1 & Uc 7\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.1.2 & Uc 7\\
+\hline
+\ \ \ \ Fo-2.2 & Uc 5.2\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.2.1 & Uc 5.2.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.2.2 & Uc 5.2.2\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.2.3 & Uc 5.2.3\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.2.4 & Uc 5.2.4\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.2.5 & Uc 5.2.5\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.2.6 & Uc 5.2.6\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.2.7 & Uc 5.5 \newline Uc 5.6\\
+\hline
+\ \ \ \ Fo-2.3 & Uc 5.3\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.3.1 & Uc 5.3.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.3.2 & Uc 5.3.2\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.3.3 & Uc 5.3.3\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.3.4 & Uc 5.3.4\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.3.5 & Uc 5.3.5\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.3.6 & Uc 5.3.6\\
+\hline
+\ \ \ \ \ \ \ \ Fo-2.3.7 & Uc 5.5 \newline Uc 5.6\\
+\hline
+\ \ \ \ Fo-2.4 & Uc 5.1\\
+\hline
+\ \ \ \ Fo-2.5 & Uc 5.4\\
+\hline
+Fo-3 & Uc 4\\
+\hline
+\ \ \ \ Fo-3.1 & Uc 4.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-3.1.1 & Uc 4.1.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-3.1.2 & Uc 4.1.2\\
+\hline
+\ \ \ \ \ \ \ \ Fo-3.1.3 & Uc 4.1.3\\
+\hline
+\ \ \ \ \ \ \ \ Fo-3.1.4 & Uc 4.1.4\\
+\hline
+\ \ \ \ \ \ \ \ Fo-3.1.5 & Uc 4.1.5\\
+\hline
+\ \ \ \ \ \ \ \ Fo-3.1.6 & Uc 4.1.6\\
+\hline
+\ \ \ \ \ \ \ \ Fo-3.1.7 & Uc 4.1.7\\
+\hline
+\ \ \ \ Fo-3.2 & Uc 4.3\\
+\hline
+\ \ \ \ Fo-3.3 & Uc 4.2\\
+\hline
+Fo-4 & Uc 3\\
+\hline
+\ \ \ \ Fo-4.1 & Uc 3.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.1.1 & Uc 3.2\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.1.2 & Uc 3.1.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.1.3 & Uc 3.1.2\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.1.4 & Uc 3.1.3\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.1.5 & Uc 3.1.4\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.1.6 & Uc 3.1.6\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.1.7 & Uc 3.1.5\\
+\hline
+\ \ \ \ Fo-4.2 & Uc 3.3\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.2.1 & Uc 3.2\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.2.2 & Uc 3.3.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.2.3 & Uc 3.3.2\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.2.4 & Uc 3.3.3\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.2.5 & Uc 3.3.4\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.2.6 & Uc 3.3.6\\
+\hline
+\ \ \ \ \ \ \ \ Fo-4.2.7 & Uc 3.3.5\\
+\hline
+\ \ \ \ Fo-4.3 & Uc 3.4\\
+\hline
+\ \ \ \ Fo-4.4 & Uc 2.2\\
+\hline
+\ \ \ \ Fo-4.5 & Uc Gerarchia Attori\\
+\hline
+\ \ \ \ Fo-4.6 & Uc 3.5\\
+\hline
+Fo-5 & Uc 1.2\\
+\hline
+\ \ \ \ Fo-5.1 & Uc 1.2.1\\
+\hline
+\ \ \ \ Fo-5.2 & Uc 1.2.2\\
+\hline
+\ \ \ \ Fo-5.3 & Uc 1.2.3\\
+\hline
+Fo-6 & Uc 1.2\\
+\hline
+\ \ \ \ Fo-6.1 & Uc 1.2.1\\
+\hline
+\ \ \ \ Fo-6.2 & Uc 1.2.2\\
+\hline
+\ \ \ \ Fo-6.3 & Uc 1.2.3\\
+\hline
+\ \ \ \ Fo-6.4 & Uc 1.2.4\\
+\hline
+Fo-7 & Uc PMAC\\
+\hline
+Fo-8 & Uc 1.1\\
+\hline
+\ \ \ \ Fo-8.1 & Uc 1 \newline Uc 1.1\\
+\hline
+\ \ \ \ Fo-8.2 & Uc 1.3\\
+\hline
+\ \ \ \ Fo-8.3 & Uc 1.3\\
+\hline
+\ \ \ \ Fo-8.4 & Uc 1.4\\
+\hline
+Fo-9 & Uc 8\\
+\hline
+Fo-10 & Uc 6\\
+\hline
+\ \ \ \ Fo-10.1 & Uc 6.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-10.1.1 & Uc 6.1.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-10.1.2 & Uc 6.1.2\\
+\hline
+\ \ \ \ \ \ \ \ Fo-10.1.3 & Uc 6.1.3\\
+\hline
+\ \ \ \ Fo-10.2 & Uc 6.2\\
+\hline
+\ \ \ \ Fo-10.3 & Uc 2 \newline Uc 2.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-10.3.1 & Uc 2.1.1\\
+\hline
+\ \ \ \ \ \ \ \ Fo-10.3.2 & Uc 2.1.2\\
+\hline
+\ \ \ \ \ \ \ \ Fo-10.3.3 & Uc 2.1.3\\
+\hline
+\ \ \ \ \ \ \ \ Fo-10.3.4 & Uc 2.1.4\\
+\hline
+\ \ \ \ \ \ \ \ Fo-10.3.5 & Uc 2.1.5\\
+\hline
+\ \ \ \ Fo-10.4 & Uc 2.1.6\\
+
+\end{longtable}
+
+% --------------------------------------------------------------------
 
 \end{document}

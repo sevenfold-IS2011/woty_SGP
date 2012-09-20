@@ -91,7 +91,8 @@
 
 \usepackage{fancyhdr} % per impostare lo stile della pagina più personalizzato, + fancyhdr ( per regolare testatina e piè di pagina ) vedi itfancyhrd
 
-
+%per \EUR
+\usepackage{marvosym}
 
 \pagestyle{fancy}
 % settaggi di pagestyle(fancy)
@@ -296,24 +297,28 @@ Per affrontare con massima efficienza la fase due del progetto il nostro team di
 \end{itemize}
 
 \subsubsection{Figure}
-In figura \virgolette{Organization Breakdown Structure} è mostrata l'organizzazione adottata dal team per ottenere una migliore gestione carico di lavoro. È essenzialmente un organizzazione a matrice debole, che vede il Capo progetto come Project Manager e Come Manager di Funzione i vari esperti e capi. Vediamo ora lo schema e la descrizione di ogni ruolo:
+In figura \virgolette{Organization Breakdown Structure} è mostrata l'organizzazione adottata dal team per ottenere una migliore gestione carico di lavoro. È essenzialmente un'organizzazione a matrice debole, che vede il Capo progetto come Project Manager e Come Manager di Funzione i vari esperti e capi. Vediamo ora lo schema e la descrizione di ogni ruolo:
 
 \vspace*{0.5cm}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{images/obs.png}
+\includegraphics[scale=1]{images/obs.png}
 \caption{Organization Breakdown Structure}
 \end{figure}
 
 \vspace*{0.5cm}
 
 \begin{itemize}
-\item Capo progetto: ha il compito che amministrare e gestire tutti team di lavoro, controllare le tempistiche e la qualità del loro lavoro. Dovrà interagire con il responsabile di ogni gruppo di lavoro per tenersi sempre aggiornato sull'avanzamento, è anche responsabile di eventuali richiami in caso qualche team non stia lavorando secondo gli accordi.
-\item Esperto sicurezza: persona che avendo esperienza nel settore della sicurezza può rispondere alle questioni che vengono sollevate durante lo studio di fattibilità riguardante la realtà di applicazione del nostro software. Può indicare con precisioni quali sono le difficoltà che potremo riscontrare nell'offrire il nostro software ad una società e può dare informazioni attendibili riguardo i dettagli tecnici del settore. 
-\item Esperto infrastrutture informatiche: figura che conoscendo adeguatamente le infrastrutture, la loro gestione e manutenzione può aiutare a quantificare gli investimenti necessari sia da parte degli sviluppatori che da parte degli acquirenti. Deve confrontarsi con l'esperto in sicurezza per capire le esigenze del settore d'applicazione del software.
-\item Capo programmatore: persona con il compito di programmare la restante parte del software. Ha il compito di fornire stime sulle tempistiche di sviluppo e di testing sul software generato. È formalmente a capo del team di sviluppo del software.
-\item Esperto gamification: esperto che grazie alle sue conoscenze saprà valutare allo stato attuale come implementare al meglio la gamification e a che livello le persone sono disposte ed affrontarla nell'ambito della sicurezza sul lavoro.
+
+\item Capo progetto: ha il compito di pianificare e monitorare le attività del team. Parteciperà inoltre attivamente alle principali fasi di analisi e progettazione tra cui l'analisi del prodotto, lo studio di fattibilità, la realizzazione del business model e alle stime di rischi e costi.
+
+\item Esperto sicurezza: ha il compito di studiare il mercato in cui vorremmo introdurre il nostro prodotto. Oltre all'analisi di mercato, segue lo studio della concorrenza e partecipa allo studio di fattibilità e alla realizzazione del business model portando in ingresso a questa fase i dati raccolti dai precedenti studi. 
+
+\item Esperto marketing: ha il compito di studiare la campagna pubblicitaria del nostro prodotto e parteciperà quindi allo studio di fattibilità e alla realizzazione del business model trattando principalmente la sezione dei channels.
+
+\item Tecnico informatico: consulente che offre le sue conoscenze durante le attività dello studio di fattibilità, realizzazione business model e stime di rischi e costi. Può aiutare a quantificare gli investimenti necessari a realizzare l'infrastruttura IT del prodotto e calcolarne i costi gestione/manutenzione. Può inoltre preventivare i costi necessari ad apportare modifiche al software.
+
 \end{itemize}
 
 \subsubsection{Responsabilità}
@@ -324,25 +329,25 @@ Le responsabilità che ogni figura ha sull'elaborato sono mostrate in figura \vi
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{images/resp.png}
+\includegraphics[scale=0.8]{images/resp.png}
 \caption{Responsabilità}
 \end{figure}
 
 \vspace*{0.5cm}
 
-Possiamo vedere nel diagramma virgolette{Responsabilità} come il capo progetto abbia potere di consulenza e supervisione su tutte le parti del gruppo di lavoro, ma che l'aspetto decisionale spetti direttamente al responsabile di quella attività.
+Possiamo vedere nel diagramma \virgolette{Responsabilità} come il capo progetto abbia potere di consulenza e supervisione su tutte le parti del gruppo di lavoro, ma che l'aspetto decisionale spetti direttamente al responsabile di quella attività.
 
 \newpage
 
 \subsection{Pianificazione temporale}
 
-Il nostro team per garantire un adeguata qualità del lavoro si impegna a seguire uno schema temporale che ricopre tutto lo svolgimento della fase due del progetto, quindi ogni figura deve svolgere delle attività prestabilite seguendo un calendario preciso. \\Eventuali discrepanze con le tempistiche da parte di uno qualsiasi dei membri del gruppo può e deve essere affrontata sotto la diretta supervisione del capo progetto, che di volta in volta dovrà decidere come precedere per risolvere il problema. \\Vediamo ora in figura \virgolette{Gantt} la schedulazione prevista:
+Il nostro team per garantire un adeguata qualità del lavoro si impegna a seguire uno schema temporale che ricopre tutto lo svolgimento della fase due del progetto, quindi ogni figura deve svolgere delle attività prestabilite seguendo un calendario preciso. \\Ogni discrepanza con le tempistiche da parte di uno qualsiasi dei membri del gruppo può e deve essere affrontata sotto la diretta supervisione del capo progetto, che di volta in volta dovrà decidere come precedere per risolvere il problema. \\Vediamo ora in figura \virgolette{Gantt} la schedulazione prevista:
 
 \vspace*{0.5cm}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.25]{images/Gantt.png}
+\includegraphics[scale=0.4]{images/Gantt.png}
 \caption{Gannt}
 \end{figure}
 
@@ -352,44 +357,152 @@ Dato il grado non troppo elevato di questa fase dovuta ad una progettazione stru
 
 \subsubsection{Descrizione delle fasi}
 \begin{itemize}
-\item Analisi di mercato: è la prima fase nello sviluppo del progetto. È dedicata ad un analisi a livello di mercato per ottenete le informazioni necessarie ad uno sviluppo del prodotto mirato nella fascia di mercato corretta, e con una eccellente grado di soddisfazione del cliente.
+
+\item Analisi del prodotto: prima di affrontare lo studio di mercato, concorrenza e campagna pubblicitaria, i principali esperti del nostro team devono approfondire lo stato in essere del nostro prodotto.
+
+\item Analisi di mercato: studio del mercato in cui si colloca il nostro prodotto.
 \begin{itemize}
-\item Raccolta dati sicurezza: fase dedicata all'ispezione del mercato sotto l'aspetto della sicurezza, per valutare come sia attualmente sviluppato la fascia di mercato dove il nostro prodotto andrà collocarsi.
-\item Relazione sicurezza: organizzazione e stesura dei dati raccolti riguarda la sicurezza nella fase precedente.
-\item Raccolta dati gamification: fase debita a verificare come il concetto della gamification sia radicato nella fascia di mercato che vogliamo ricoprire, alla fine di questa fase si deve essere in grado di valutare la conoscenza da parte del cliente di questo concetto e la sua capacità di assimilarlo.
-\item Relazione gamification: organizzazione e stesura dei dati raccolti riguardo la gamification nella fase precedente.
+
+\item Studio di mercato: studio del mercato dell'ambito della sicurezza sul lavoro.
+
+\item Studio della concorrenza: studio dei principali competitors e delle loro offerte.
+
+\item Studio campagna pubblicitaria:a seguito dei dati raccolti studio un'efficace campagna pubblicitaria per il nostro prodotto.
+
 \end{itemize}
-\item Studio fattibilità: è la seconda fase del progetto e ha lo scopo di valutare ed analizzare tutti i dati raccolti nella fase di analisi di mercato. È mirata a decidere se e come il nostro prodotto possa possa domanire sugli eventuali competitor.
-\begin{itemize}
-\item Realtà sicurezza: analisi dei dati raccolti riguardo la sicurezza.
-\item Software: studio di fattibilità elaborato del capo programmatore con lo scopo di fare uno studio di fattibilità riguardante allla parte software che deve essere ancora sviluppata.
-\item Realtà gamification: analisi dei dati raccolti riguardo la sicurezza.
-\item Infrastrutture: studio di fattibilità con lo scopo di determinare quali infrastrutture siano necessarie, come organizzarle e gestirle per una performance eccellente.
-\end{itemize}
-\item Verifica progressi: fase di verifica dell'avanzamento del lavoro, dove il capo progetto deve assicurarsi che i lavori siano arrivati al punto prestabilito. Si riportano eventuali problemi riscontrati e necessità. Qui deve essere finita la fase di raccolta dati e analisi per iniziare con la creazione del Business Model. 
+
+\item Studio fattibilità: ha lo scopo di valutare tutti i dati raccolti nella fase di analisi di mercato per sancire se il nostro prodotto è commercializzabile e possa avere una possibilità di successo a fronte delle offerte dei competitors.
+
+\item Verifica progressi: fase di verifica dell'avanzamento del lavoro, dove il capo progetto deve assicurarsi che i lavori siano giunti al punto prestabilito. Qui termina la fase di raccolta dati per dare inizio alla creazione del Business Model. 
+
 \item Progettazione Business Model:
+
 \begin{itemize}
-\item Analisi dati mercato: si analizzano i dati risultanti dalla fase di analisi di mercato per ottenere una chiara idea per ideare un ottimo business model.
-\item Analisi dati fattibilità: si analizzano i dati risultanti dallo studio di fattibilità e si decide come il business model dovrà essere orientato.
+
+\item Analisi documentazione: si analizzano i dati e le conclusioni ottenuti dalle fasi precedenti, condividendo le informazioni con tutti gli esperti del nostro team.
+
 \item Realizzazione modello: fase di progettazione del business model.
-\end{itemize}
-\item Stima rischi: fase dedicata alla stima di successo o insuccesso del prodotto, si decide come affrontare eventuali problemi o ritardi nello sviluppo.
-\item Stima costi: si effettua una previsione in base ai dati elaborati fino ad ora per lo sviluppo del software rimanente e del successivo inserimento nel mercato.
+
 \end{itemize}
 
+\item Stima rischi: stima dei rischi riscontrabili dal nostro business model e delle possibili soluzioni ad essi.
+
+\item Stima costi: stima dei costi necessari per supportare il business model scelto.
+
+\end{itemize}
+
+\newpage
 \subsubsection{Distribuzione delle risorse}
-Alcuni compiti saranno svolti dal membro del gruppo che ricopre il ruolo corrispondente, ad esempio il compito \virgolette{Raccolta dati sicurezza} sarà svolto dal membro del gruppo che ricopre la figura di \virgolette{Esperto sicurezza}, altri saranno svolti da più membri contemporaneamente, come ad esempio \virgolette{Progettazione Business Model}, ma vediamo in dettaglio la distribuzione delle risorse del team rispetto le fasi operative:
-
-\vspace*{0.5cm}
+Alcuni compiti saranno svolti dal membro del gruppo che ricopre il ruolo corrispondente, ad esempio il compito \virgolette{Raccolta dati sicurezza} sarà svolto dal membro del gruppo che ricopre la figura di \virgolette{Esperto sicurezza}, altri saranno svolti da più membri contemporaneamente, come ad esempio \virgolette{Progettazione Business Model}, ma vediamo in dettaglio la distribuzione delle risorse del team rispetto le fasi operative: \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.55]{images/risorse.png}
+\includegraphics[scale=0.65]{images/risorse.png}
 \caption{Distribuzione risorse}
 \end{figure}
 
 \vspace*{0.5cm}
 
-Nella figura virgolette{Distribuzione risorse} si può vedere come le varie figure partecipanti al lavoro siano impegnate temporalmente su tutto il periodo di attività.
+Nella figura \virgolette{Distribuzione risorse} si può vedere come le varie figure partecipanti al lavoro siano impegnate temporalmente su tutto il periodo di attività.
+
+\subsubsection{Pianificazione oraria e dei costi}
+
+In questa sezione sarà proposto il preventivo che risulta dalle ipotesi sulla quantità di ore che servirà ad ogni figura professionale per svolgere la propria parte di progetto.\\
+Il preventivo sarà calcolato tramite i costi medi orari (CMO) riassunti nella seguente tabella:\\
+
+\begin{longtable}{ | p{5cm} | p{3.4cm} |}
+\caption{Compenso orario delle figure professionali}\\
+\hline
+\endfirsthead
+\multicolumn{2}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{2}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Figura professionale} \ & \textbf{CMO}\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo progetto & \EUR \ 40 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto mercato & \EUR \ 25 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto marketing & \EUR \ 25 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Tecnico informatico & \EUR \ 30 \\
+\hline
+\end{longtable}
+
+
+\begin{longtable}{ | p{5cm} | p{3.5cm} | p{3.5cm} |}
+\caption{Preventivo costi totali per ogni figura professionale}\\
+\hline
+\endfirsthead
+\multicolumn{3}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{3}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Figura professionale} \ & \textbf{Ore preventivate} \ & \textbf{Costi preventivati} \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Capo progetto & 100 (25 giorni) & \EUR \ 4.000\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto mercato & 128 (32 giorni)& \EUR \ 3.200 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Esperto marketing & 90 (30 giorni) & \EUR \ 2.250 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Tecnico informatico & 100 (20 giorni) & \EUR \ 3.000 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+\textbf{Totale} & \textbf{408} (8 settimane) & \textbf{\EUR \ 12.450} \\
+\hline
+\end{longtable}
+
+Viene inoltre proposta la tabella con i costi preventivati per ogni fase di progetto indicata nella pianificazione:
+
+\begin{longtable}{ | p{6cm} | p{4cm} |}
+\caption{Preventivo costi per fase di progetto}\\
+\hline
+\endfirsthead
+\multicolumn{2}{r}{\textit{(Continua alla pagina successiva)}}
+\endfoot
+\multicolumn{2}{l}{\textit{(Continua dalla pagina precedente)}}
+\endhead
+\hline
+\endlastfoot
+\textbf{Fase di progetto} \ & \textbf{Costi preventivati}\\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Pianificazione e Analisi prodotto & \EUR \ 1.150 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Analisi di mercato & \EUR \ 1.600 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Studio di fattibilità & \EUR \ 1.940 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Verifica progressi & \EUR \ 485 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Progettazione business model & \EUR \ 4.850 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+Stime conclusive & \EUR \ 2.425 \\
+\hline
+\rule[-2mm]{0mm}{0.7cm}
+\textbf{Totale} & \textbf{\EUR \ 12.450} \\
+\hline
+\end{longtable}
+
+Questi dati saranno poi confrontabili con il quantitativo orario svolto effettivamente e le spese sostenute nel consuntivo.
 
 \end{document}
